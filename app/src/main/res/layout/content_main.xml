@@ -1,19 +1,429 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.github.twotau.scoutbot.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:fillViewport="false">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_bottom_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_top_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="io.github.twotau.scoutbot.MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textView"
+            android:text="@string/app_desc"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <!--Team number-->
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/teamNumberInput"
+            android:hint="Team number"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <!--Alliance name-->
+        <RadioGroup
+            android:id="@+id/allianceColorInput"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/teamNumberInput"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/teamNumberInput">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blue"
+                android:buttonTint="#0000ff"
+                android:id="@+id/radioButton9"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red"
+                android:buttonTint="#ff0000"
+                android:id="@+id/radioButton10"
+                android:checked="false" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Defenses"
+            android:id="@+id/textView3"
+            android:layout_below="@+id/allianceColorInput"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Chosen"
+            android:id="@+id/textView4"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <!--Group A: Portcullis, Cheval de Frise-->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/defenseA">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portcullis"
+                android:id="@+id/radioButton"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheval de Frise"
+                android:id="@+id/radioButton2"
+                android:checked="false" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/defenseA"
+            android:background="@color/defenseGroupSeperationColor" />
+
+        <!--Group B: Ramparts, Moat-->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/defenseA"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/defenseB">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ramparts"
+                android:id="@+id/radioButton3"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moat"
+                android:id="@+id/radioButton4"
+                android:checked="false" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/defenseB"
+            android:background="@color/defenseGroupSeperationColor" />
+
+        <!--Group C: Drawbridge, Sally Port-->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/defenseB"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/defenseC">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drawbridge"
+                android:id="@+id/radioButton5"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sally Port"
+                android:id="@+id/radioButton6"
+                android:checked="false" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/defenseC"
+            android:background="@color/defenseGroupSeperationColor" />
+
+        <!--Group D: Rock Wall, Rough Terrain-->
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/defenseC"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/defenseD">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rock Wall"
+                android:id="@+id/radioButton7"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rough Terrain"
+                android:id="@+id/radioButton8"
+                android:checked="false" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/defenseD"
+            android:background="@color/defenseGroupSeperationColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Shooting"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/defenseD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="High Goals Scored"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/textView5"/>
+
+        <!--High Goals Input-->
+        <EditText
+            android:layout_width="@dimen/scoringInputWidth"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/highGoalsInput"
+            android:text="0"
+            android:layout_below="@+id/textView5"
+            android:layout_alignBaseline="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"/>
+
+        <!--Add High Goal-->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/highGoalsPlus"
+            android:onClick="addHighGoal"
+            android:layout_alignTop="@+id/highGoalsInput"
+            android:layout_toRightOf="@+id/highGoalsInput"
+            android:layout_toEndOf="@+id/highGoalsInput" />
+
+        <!--Minus Low Goal-->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/highGoalsMinus"
+            android:onClick="minusHighGoal"
+            android:layout_marginLeft="@dimen/spacingBetweenPlusMinusButtons"
+            android:layout_alignTop="@+id/highGoalsInput"
+            android:layout_toRightOf="@+id/highGoalsPlus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Low Goals Scored"
+            android:id="@+id/textView10"
+            android:layout_below="@+id/highGoalsInput"/>
+
+        <!--Low Goals Input-->
+        <EditText
+            android:layout_width="@dimen/scoringInputWidth"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/lowGoalsInput"
+            android:text="0"
+            android:layout_below="@+id/highGoalsInput"
+            android:layout_alignBaseline="@+id/textView10"
+            android:layout_alignLeft="@+id/highGoalsInput"/>
+
+        <!--Add Low Goal-->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/lowGoalsPlus"
+            android:onClick="addLowGoal"
+            android:layout_alignTop="@+id/lowGoalsInput"
+            android:layout_toRightOf="@+id/lowGoalsInput"
+            android:layout_toEndOf="@+id/lowGoalsInput" />
+
+        <!--Minus Low Goal-->
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/lowGoalsMinus"
+            android:onClick="minusLowGoal"
+            android:layout_marginLeft="@dimen/spacingBetweenPlusMinusButtons"
+            android:layout_alignTop="@+id/lowGoalsInput"
+            android:layout_toRightOf="@+id/lowGoalsPlus" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shootingRatingInput"
+            android:layout_below="@+id/lowGoalsInput"
+            android:stepSize="0.5"
+            android:rating="2.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Specialty"
+            android:id="@+id/textView6"
+            android:layout_below="@+id/shootingRatingInput" />
+
+        <!--Specialty Group-->
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView6"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6"
+            android:id="@+id/specialtyGroup">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shooting"
+                android:id="@+id/radioButton11"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crossing Defenses"
+                android:id="@+id/radioButton12"
+                android:checked="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Both"
+                android:id="@+id/radioButton13"
+                android:checked="false" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Driver Rating"
+            android:id="@+id/textView7"
+            android:layout_below="@+id/specialtyGroup" />
+
+        <!--Driver Rating-->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/drivingRatingInput"
+            android:layout_below="@+id/textView7"
+            android:layout_alignLeft="@+id/textView7"
+            android:layout_alignStart="@+id/textView7"
+            android:stepSize="0.5"
+            android:rating="2.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Scaling"
+            android:id="@+id/textView8"
+            android:layout_below="@+id/drivingRatingInput" />
+
+        <!--Successful Scaling-->
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Successful"
+            android:id="@+id/successfulInput"
+            android:layout_below="@+id/textView8"
+            android:checked="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Overall Rating Estimate"
+            android:id="@+id/textView9"
+            android:layout_below="@+id/successfulInput" />
+
+        <!--Overall Rating-->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/overallRatingInput"
+            android:isIndicator="true"
+            android:layout_below="@+id/textView9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:stepSize="0.5"
+            android:rating="2.5" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make QR Code"
+            android:id="@+id/qrButton"
+            android:onClick="makeQR"
+            android:layout_below="@+id/overallRatingInput"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Take Picture"
+            android:id="@+id/takePictureButton"
+            android:layout_below="@+id/overallRatingInput"
+            android:layout_toRightOf="@+id/textView7"
+            android:layout_toEndOf="@+id/textView7" />
+
+    </RelativeLayout>
+</ScrollView>

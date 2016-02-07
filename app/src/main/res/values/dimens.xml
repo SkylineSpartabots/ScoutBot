@@ -1,6 +1,13 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_top_margin">64dp</dimen>
+    <!-- To have space for appbar at top-->
+    <dimen name="activity_bottom_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="lineHeight">1dp</dimen>
+
+    <dimen name="scoringInputWidth">40dp</dimen>
+    <dimen name="spacingBetweenPlusMinusButtons">10dp</dimen>
 </resources>
