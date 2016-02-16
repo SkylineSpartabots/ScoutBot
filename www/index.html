@@ -38,15 +38,26 @@
                     <label>Team number:</label>
                     <input type="number" name="teamNumber" min="1" max="6300" placeholder="e.g. 2976" />
                     <br />
-                    Alliance:
+                    <label>Alliance:</label>
                     <select>
                         <option value="b">Blue</option>
                         <option value="r">Red</option>
                     </select>
-                    <br />
-                    <input type="checkbox" name="deadbot" value="dead"><label>Dead bot</label>
                 </fieldset>
                 <fieldset>
+                    <legend>Bad stuff</legend>
+                    <input type="checkbox" name="foul" value="foul"><label>Foul</label>
+                    <br />
+                    <input type="checkbox" name="techfoul" value="techfoul"><label>Tech foul</label>
+                    <br />
+                    <input type="checkbox" name="yellow card" value="yellow card"><label>Yellow card</label>
+                    <br />
+                    <input type="checkbox" name="red card" value="red card"><label>Red card</label>
+                    <br />
+                    <input type="checkbox" name="deadbot" value="dead"><label>Dead bot</label>
+                    <br />
+                </fieldset>
+                <fieldset id="defensesChosen">
                     <legend>Defenses chosen</legend>
                     <fieldset>
                         <legend>A</legend>
@@ -69,13 +80,8 @@
                         <input type="radio" name="catD" value="Rough Terrain"><label>Rough Terrain</label>
                     </fieldset>
                 </fieldset>
-                <fieldset>
-                    <legend>Defenses crossed</legend>
-                    <fieldset>
-                        <legend>A</legend>
-                        <label>Portcullis</label>
-                        <input type="number" name="Portcullis" min="0" max="10" value="0">
-                    </fieldset>
+                <fieldset id="defensesBreached">
+                    <legend>Defenses breached</legend>
                     <fieldset>
                         <legend>A</legend>
                         <label>Portcullis</label>
@@ -106,7 +112,7 @@
                     </fieldset>
                     <fieldset>
                         <legend>Low bar</legend>
-                        <input type="checkbox" name="lowbarSuccessful" value="successful"><label>Breached</label>
+                        <input type="checkbox" name="lowbarSuccessful" value="successful"><label class="noPicture">Breached</label>
                     </fieldset>
                 </fieldset>
                 <fieldset>

@@ -9,6 +9,16 @@ var app = {
             $("#app").attr("class", $(this).attr("id") + "Active");
         });
 
+        var defenseLabels = $("#defensesChosen label, #defensesBreached label:not(.noPicture)");
+        for(var i = 0; i < defenseLabels.length; i++) {
+            var imageUrl = "img/" + $(defenseLabels[i]).text().replace(/ /g,"_").toLowerCase() + ".png";
+            var image = $("<img src='" + imageUrl + "'>");
+            $(defenseLabels[i]).append(image);
+        }
+        defenseLabels.click(function() {
+            $(this).children("img").toggleClass("visible");
+        });
+
         $("#generateQR").click(function() {
             var qrResult = document.getElementById("qrResult");
             var qrcode = new QRCode(qrResult, "test data");
@@ -18,7 +28,7 @@ var app = {
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if(!result.cancelled) {
-                        alert("Decoded text is: " + result.text);
+                        alert(result.text);
                     } else {
                         alert("Scan cancelled, data not saved");
                     }
