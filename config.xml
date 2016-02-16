@@ -2,10 +2,10 @@
 <widget id="io.github.twotau" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ScoutBot</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Spartabots team 2976's scouting app for the 2016 FRC competition.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="dev@cordova.apache.org" href="http://twotau.github.io">
+        Vishal Devireddy
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />

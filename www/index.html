@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <!--
@@ -32,18 +14,125 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Hello World</title>
+        <title>Scout Bot</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/qrcode.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <div id="app" class="gameTabActive">
+            <div id="tabsContainer">
+                <div id="pitTab">Pit</div>
+                <div id="gameTab">Game</div>
+                <div id="decodeTab">Decode</div>
             </div>
+            <h1 class="pit">Pit Scouting</h1>
+            <h1 class="game">Game Scouting</h1>
+            <h1 class="decode">Decode QR Code</h1>
+            <div class="game view">
+                <fieldset>
+                    <legend>Team basic info</legend>
+                    <label>Team number:</label>
+                    <input type="number" name="teamNumber" min="1" max="6300" placeholder="e.g. 2976" />
+                    <br />
+                    Alliance:
+                    <select>
+                        <option value="b">Blue</option>
+                        <option value="r">Red</option>
+                    </select>
+                    <br />
+                    <input type="checkbox" name="deadbot" value="dead"><label>Dead bot</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Defenses chosen</legend>
+                    <fieldset>
+                        <legend>A</legend>
+                        <input type="radio" name="catA" value="Portcullis"><label>Portcullis</label>
+                        <input type="radio" name="catA" value="Cheval de Frise"><label>Cheval de Frise</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>B</legend>
+                        <input type="radio" name="catB" value="Moat"><label>Moat</label>
+                        <input type="radio" name="catB" value="Ramparts"><label>Ramparts</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>C</legend>
+                        <input type="radio" name="catC" value="Drawbridge"><label>Drawbridge</label>
+                        <input type="radio" name="catC" value="Sally Port"><label>Sally Port</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>D</legend>
+                        <input type="radio" name="catD" value="Rock Wall"><label>Rock Wall</label>
+                        <input type="radio" name="catD" value="Rough Terrain"><label>Rough Terrain</label>
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <legend>Defenses crossed</legend>
+                    <fieldset>
+                        <legend>A</legend>
+                        <label>Portcullis</label>
+                        <input type="number" name="Portcullis" min="0" max="10" value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>A</legend>
+                        <label>Portcullis</label>
+                        <input type="number" name="Portcullis" min="0" max="10" value="0">
+                        <label>Cheval de Frise</label>
+                        <input type="number" name="Cheval de Frise" min="0" max="10" value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>B</legend>
+                        <label>Moat</label>
+                        <input type="number" name="Moat" min="0" max="10" value="0">
+                        <label>Ramparts</label>
+                        <input type="number" name="Ramparts" min="0" max="10" value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>C</legend>
+                        <label>Drawbridge</label>
+                        <input type="number" name="Drawbridge" min="0" max="10" value="0">
+                        <label>Sally Port</label>
+                        <input type="number" name="Sally Port" min="0" max="10" value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>D</legend>
+                        <label>Rock Wall</label>
+                        <input type="number" name="Rock Wall" min="0" max="10" value="0">
+                        <label>Rough Terrain</label>
+                        <input type="number" name="Rough Terrain" min="0" max="10" value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Low bar</legend>
+                        <input type="checkbox" name="lowbarSuccessful" value="successful"><label>Breached</label>
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <legend>Shooting</legend>
+                    <label>High goals scored:</label>
+                    <input type="number" name="highGoals" min="0" max="99" value="0">
+                    <br />
+                    <label>Low goals scored:</label>
+                    <input type="number" name="lowGoals" min="0" max="99" value="0">
+                </fieldset>
+                <fieldset>
+                    <legend>Specialties</legend>
+                    <input type="checkbox" name="specialty" value="shooting"><label>Shooting</label>
+                    <input type="checkbox" name="specialty" value="breaching"><label>Breaching</label>
+                    <input type="checkbox" name="specialty" value="defending"><label>Defending</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Scaling Endgame</legend>
+                    <input type="checkbox" name="scalingCapable" value="capable"><label>Capable</label>
+                    <input type="checkbox" name="scalingSuccessful" value="successful"><label>Successful</label>
+                </fieldset>
+            </div>
+            <button id="generateQR">Generate QR Code</button>
+            <button id="takePicture">Take Picture</button>
+            <button id="decodeQR">Scan QR Code</button>
+            <div id="qrResult"></div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
