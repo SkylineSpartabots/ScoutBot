@@ -1,22 +1,26 @@
 * {
-    margin: 0;
-    padding: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
     outline: none;
     border: 0;
-    background: transparent;
-    color: #eee;
+    : transparent;
+    color: #222;
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color: #2a2a2a;
+    user-select: none;
+    background-color: #fff;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 25px;
+    line-height: 1.3em;
     height: 100%;
     width: 100%;
+}
+
+input {
+    font-size: 25px;
 }
 
 /* Portrait layout (default) */
@@ -34,7 +38,7 @@ h1 {
     align-items: stretch;
     flex-flow: row wrap;
     width: 100%;
-    background: rgba(0,0,0,0.2);
+    background: rgba(30,30,30,0.4);
 }
 
 #tabsContainer div {
@@ -42,14 +46,14 @@ h1 {
     flex-basis: 0;
     text-align: center;
     padding: 10px;
-    font-size: 1.1em;
-    color: #888; /* unselected tab color */
+    font-size: 1.08em;
+    color: #111; /* unselected tab color */
 }
 
 .pitTabActive #pitTab, /* selected tab */
 .gameTabActive #gameTab,
 .decodeTabActive #decodeTab {
-    background: #0f951c;
+    background: #43A047;
     color: #eee;
 }
 
@@ -57,6 +61,29 @@ h1 {
 .gameTabActive .view:not(.game), .gameTabActive h1:not(.game), .gameTabActive #decodeQR,
 .decodeTabActive .view:not(.decode), .decodeTabActive h1:not(.decode), .decodeTabActive #generateQR, .decodeTabActive #takePicture, .decodeTabActive #qrResult {
     display: none;
+}
+
+.view > fieldset {
+    border-bottom: 5px solid #000;
+    /*border-top: 5px solid #000;*/
+}
+
+legend {
+    padding: 5px;
+}
+
+.defenses label img,
+#autonomous fieldset fieldset legend img {
+    display: none;
+    z-index: 10; /* should always be top */
+}
+
+.defenses label img.visible,
+#autonomous fieldset fieldset legend img.visible {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 #qrResult {
@@ -69,17 +96,36 @@ h1 {
     margin-left: auto;
 }
 
-#defensesChosen label img,
-#defensesBreached label img {
-    display: none;
+button {
+    padding: 13px;
+    background: #43A047;
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+    text-transform: uppercase;
 }
 
-#defensesChosen label img.visible,
-#defensesBreached label img.visible {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
+button.minus,
+button.plus {
+    padding: 5px 10px;
+    background: #ddd;
+    box-shadow: none;
+}
+
+button.minus {
+    margin-right: 10px;
+}
+
+button.minus::after,
+button.plus::after {
+    color: #000;
+}
+
+button.minus::before {
+    content: "-";
+}
+
+button.plus::before {
+    content: "+";
 }
 
 /* Landscape layout (with min-width) */
@@ -87,4 +133,72 @@ h1 {
     #app {
 
     }
+}
+
+input:not([type="number"]) {
+    display: none;
+}
+
+input:not([type="number"]) + label span {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+input[type="radio"] + label span {
+    border-radius: 50%;
+}
+
+input:not([type="number"]) + label span::after {
+    content: "";
+    position: absolute;
+    top: 4px; left: 4px;
+    width: 8px; height: 8px;
+    transition: 0.2s ease-out;
+}
+
+input:not([type="number"]):checked + label span::after {
+    background: #000;
+}
+
+input[type="radio"]:checked + label span::after {
+    border-radius: 50%;
+}
+
+input:not([type="number"]) + label span {
+    background: #292321;
+}
+
+input:not([type="number"]):checked + label span {
+    background: #17a229;
+}
+
+input:not([type="number"]) + label span,
+input:not([type="number"]):checked + label span {
+    transition: background 0.2s ease-out;
+}
+
+.makes::before {
+    content: "Makes: ";
+}
+.misses::before {
+    content: "Misses: ";
+}
+
+#autonomous input[value="Make"] + label {
+    border-bottom: 2px solid #31ac1d;
+} #autonomous input[value="Reach"] + label {
+    border-bottom: 2px solid #c5db15;
+} #autonomous input[value="Miss"] + label {
+    border-bottom: 2px solid #d2260f;
+}
+
+#autonomous input[value="Make"]:checked + label span {
+    background: #31ac1d;
+} #autonomous input[value="Reach"]:checked + label span {
+    background: #c5db15;
+} #autonomous input[value="Miss"]:checked + label span {
+    background: #d2260f;
 }

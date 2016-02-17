@@ -19,6 +19,7 @@
         <title>Scout Bot</title>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/taphold.js"></script>
         <script type="text/javascript" src="js/qrcode.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </head>
@@ -32,107 +33,304 @@
             <h1 class="pit">Pit Scouting</h1>
             <h1 class="game">Game Scouting</h1>
             <h1 class="decode">Decode QR Code</h1>
+            <div class="pit view">
+                <fieldset>
+                    <legend>Team basic info</legend>
+                    <label>Team number:</label>
+                    <input type="number" name="teamNumber" min="1" max="6300" placeholder="e.g. 2976" />
+                    <!-- <br />
+                    <input type="radio" name="alliance" value="Blue" id="pitBlueAlliance">
+                    <label for="pitBlueAlliance">Blue</label>
+                    <input type="radio" name="alliance" value="Red" id="pitRedAlliance">
+                    <label for="pitRedAlliance">Red</label> -->
+                </fieldset>
+                <fieldset class="defenses">
+                    <legend>Defenses can cross</legend>
+                    <fieldset>
+                        <legend>A</legend>
+                        <input type="checkbox" name="psPortcullis" value="true" id="psPortcullis">
+                        <label for="psPortcullis">Portcullis</label>
+                        <input type="checkbox" name="psChevalDeFrise" value="true" id="psChevalDeFrise">
+                        <label for="psChevalDeFrise">Cheval de Frise</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>B</legend>
+                        <input type="checkbox" name="psMoat" value="true" id="psMoat">
+                        <label for="psMoat">Moat</label>
+                        <input type="checkbox" name="psRamparts" value="true" id="psRamparts">
+                        <label for="psRamparts">Ramparts</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>C</legend>
+                        <input type="checkbox" name="psDrawbridge" value="true" id="psDrawbridge">
+                        <label for="psDrawbridge">Drawbridge</label>
+                        <input type="checkbox" name="psSallyPort" value="true" id="psSallyPort">
+                        <label for="psSallyPort">Sally Port</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>D</legend>
+                        <input type="checkbox" name="psRockWall" value="true" id="psRockWall">
+                        <label for="psRockWall">Rock Wall</label>
+                        <input type="checkbox" name="psRoughTerrain" value="true" id="psRoughTerrain">
+                        <label for="psRoughTerrain">Rough Terrain</label>
+                    </fieldset>
+                    <input type="checkbox" name="psLowbar" value="true" id="psLowbar">
+                    <label for="psLowbar" class="noPicture">Low Bar</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Shooting</legend>
+                    <input type="checkbox" name="psHighGoals" value="true" id="psHighGoals">
+                    <label for="psHighGoals">Can shoot high</label>
+                    <input type="checkbox" name="psLowGoals" value="true" id="psLowGoals">
+                    <label for="psLowGoals">Can shoot low</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Roles</legend>
+                    <input type="checkbox" name="psRole" value="highShooting" id="psHighShootingSpecialty">
+                    <label for="psHighShootingSpecialty">High shooting</label>
+                    <input type="checkbox" name="psRole" value="lowShooting" id="psLowShootingSpecialty">
+                    <label for="psLowShootingSpecialty">Low shooting</label>
+                    <input type="checkbox" name="psRole" value="breaching" id="psBreachingSpecialty">
+                    <label for="psBreachingSpecialty">Breaching</label>
+                    <input type="checkbox" name="psRole" value="defending" id="psDefendingSpecialty">
+                    <label for="psDefendingSpecialty">Defending</label>
+                </fieldset>
+            </div>
             <div class="game view">
                 <fieldset>
                     <legend>Team basic info</legend>
                     <label>Team number:</label>
                     <input type="number" name="teamNumber" min="1" max="6300" placeholder="e.g. 2976" />
                     <br />
-                    <label>Alliance:</label>
-                    <select>
-                        <option value="b">Blue</option>
-                        <option value="r">Red</option>
-                    </select>
+                    <!-- <input type="radio" name="alliance" value="Blue" id="gameBlueAlliance">
+                    <label for="gameBlueAlliance">Blue</label>
+                    <input type="radio" name="alliance" value="Red" id="gameRedAlliance">
+                    <label for="gameRedAlliance">Red</label> -->
                 </fieldset>
                 <fieldset>
                     <legend>Bad stuff</legend>
-                    <input type="checkbox" name="foul" value="foul"><label>Foul</label>
+                    <input type="checkbox" name="foul" value="foul" id="fouled"><label for="fouled">Foul or Yellow/Red card</label>
                     <br />
-                    <input type="checkbox" name="techfoul" value="techfoul"><label>Tech foul</label>
-                    <br />
-                    <input type="checkbox" name="yellow card" value="yellow card"><label>Yellow card</label>
-                    <br />
-                    <input type="checkbox" name="red card" value="red card"><label>Red card</label>
-                    <br />
-                    <input type="checkbox" name="deadbot" value="dead"><label>Dead bot</label>
-                    <br />
+                    <input type="checkbox" name="deadbot" value="dead" id="deadBot"><label for="deadBot">Dead bot</label>
                 </fieldset>
-                <fieldset id="defensesChosen">
+                <fieldset class="defenses">
                     <legend>Defenses chosen</legend>
                     <fieldset>
                         <legend>A</legend>
-                        <input type="radio" name="catA" value="Portcullis"><label>Portcullis</label>
-                        <input type="radio" name="catA" value="Cheval de Frise"><label>Cheval de Frise</label>
+                        <input type="radio" name="cdCatA" value="Portcullis" id="cdPortcullis">
+                        <label for="cdPortcullis">Portcullis</label>
+                        <input type="radio" name="cdCatA" value="Cheval de Frise" id="cdChevalDeFrise">
+                        <label for="cdChevalDeFrise">Cheval de Frise</label>
                     </fieldset>
                     <fieldset>
                         <legend>B</legend>
-                        <input type="radio" name="catB" value="Moat"><label>Moat</label>
-                        <input type="radio" name="catB" value="Ramparts"><label>Ramparts</label>
+                        <input type="radio" name="cdCatB" value="Moat" id="cdMoat">
+                        <label for="cdMoat">Moat</label>
+                        <input type="radio" name="cdCatB" value="Ramparts" id="cdRamparts">
+                        <label for="cdRamparts">Ramparts</label>
                     </fieldset>
                     <fieldset>
                         <legend>C</legend>
-                        <input type="radio" name="catC" value="Drawbridge"><label>Drawbridge</label>
-                        <input type="radio" name="catC" value="Sally Port"><label>Sally Port</label>
+                        <input type="radio" name="cdCatC" value="Drawbridge" id="cdDrawbridge">
+                        <label for="cdDrawbridge">Drawbridge</label>
+                        <input type="radio" name="cdCatC" value="Sally Port" id="cdSallyPort">
+                        <label for="cdSallyPort">Sally Port</label>
                     </fieldset>
                     <fieldset>
                         <legend>D</legend>
-                        <input type="radio" name="catD" value="Rock Wall"><label>Rock Wall</label>
-                        <input type="radio" name="catD" value="Rough Terrain"><label>Rough Terrain</label>
+                        <input type="radio" name="cdCatD" value="Rock Wall" id="cdRockWall">
+                        <label for="cdRockWall">Rock Wall</label>
+                        <input type="radio" name="cdCatD" value="Rough Terrain" id="cdRoughTerrain">
+                        <label for="cdRoughTerrain">Rough Terrain</label>
                     </fieldset>
                 </fieldset>
-                <fieldset id="defensesBreached">
+                <fieldset id="autonomous">
+                    <legend>Autonomous</legend>
+                        <fieldset>
+                            <legend>A</legend>
+                            <fieldset>
+                                <legend>Portcullis</legend>
+                                <input type="radio" name="autoDefensePortcullis" value="Make" id="adPortcullisMake">
+                                <label for="adPortcullisMake">Make</label>
+                                <input type="radio" name="autoDefensePortcullis" value="Reach" id="adPortcullisReach">
+                                <label for="adPortcullisReach">Reach</label>
+                                <input type="radio" name="autoDefensePortcullis" value="Miss" id="adPortcullisMiss">
+                                <label for="adPortcullisMiss">Miss</label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Cheval De Frise</legend>
+                                <input type="radio" name="autoDefenseChevalDeFrise" value="Make" id="adChevalDeFriseMake">
+                                <label for="adChevalDeFriseMake">Make</label>
+                                <input type="radio" name="autoDefenseChevalDeFrise" value="Reach" id="adChevalDeFriseReach">
+                                <label for="adChevalDeFriseReach">Reach</label>
+                                <input type="radio" name="autoDefenseChevalDeFrise" value="Miss" id="adChevalDeFriseMiss">
+                                <label for="adChevalDeFriseMiss">Miss</label>
+                            </fieldset>
+                        </fieldset>
+                        <fieldset>
+                            <legend>B</legend>
+                            <fieldset>
+                                <legend>Moat</legend>
+                                <input type="radio" name="autoDefenseMoat" value="Make" id="adMoatMake">
+                                <label for="adMoatMake">Make</label>
+                                <input type="radio" name="autoDefenseMoat" value="Reach" id="adMoatReach">
+                                <label for="adMoatReach">Reach</label>
+                                <input type="radio" name="autoDefenseMoat" value="Miss" id="adMoatMiss">
+                                <label for="adMoatMiss">Miss</label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Ramparts</legend>
+                                <input type="radio" name="autoDefenseRamparts" value="Make" id="adRampartsMake">
+                                <label for="adRampartsMake">Make</label>
+                                <input type="radio" name="autoDefenseRamparts" value="Reach" id="adRampartsReach">
+                                <label for="adRampartsReach">Reach</label>
+                                <input type="radio" name="autoDefenseRamparts" value="Miss" id="adRampartsMiss">
+                                <label for="adRampartsMiss">Miss</label>
+                            </fieldset>
+                        </fieldset>
+                        <fieldset>
+                            <legend>C</legend>
+                            <fieldset>
+                                <legend>Drawbridge</legend>
+                                <input type="radio" name="autoDefenseDrawbridge" value="Make" id="adDrawbridgeMake">
+                                <label for="adDrawbridgeMake">Make</label>
+                                <input type="radio" name="autoDefenseDrawbridge" value="Reach" id="adDrawbridgeReach">
+                                <label for="adDrawbridgeReach">Reach</label>
+                                <input type="radio" name="autoDefenseDrawbridge" value="Miss" id="adDrawbridgeMiss">
+                                <label for="adDrawbridgeMiss">Miss</label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Sally Port</legend>
+                                <input type="radio" name="autoDefenseSallyPort" value="Make" id="adSallyPortMake">
+                                <label for="adSallyPortMake">Make</label>
+                                <input type="radio" name="autoDefenseSallyPort" value="Reach" id="adSallyPortReach">
+                                <label for="adSallyPortReach">Reach</label>
+                                <input type="radio" name="autoDefenseSallyPort" value="Miss" id="adSallyPortMiss">
+                                <label for="adSallyPortMiss">Miss</label>
+                            </fieldset>
+                        </fieldset>
+                        <fieldset>
+                            <legend>D</legend>
+                            <fieldset>
+                                <legend>Rock Wall</legend>
+                                <input type="radio" name="autoDefenseRockWall" value="Make" id="adRockWallMake">
+                                <label for="adRockWallMake">Make</label>
+                                <input type="radio" name="autoDefenseRockWall" value="Reach" id="adRockWallReach">
+                                <label for="adRockWallReach">Reach</label>
+                                <input type="radio" name="autoDefenseRockWall" value="Miss" id="adRockWallMiss">
+                                <label for="adRockWallMiss">Miss</label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Rough Terrain</legend>
+                                <input type="radio" name="autoDefenseRoughTerrain" value="Make" id="adRoughTerrainMake">
+                                <label for="adRoughTerrainMake">Make</label>
+                                <input type="radio" name="autoDefenseRoughTerrain" value="Reach" id="adRoughTerrainReach">
+                                <label for="adRoughTerrainReach">Reach</label>
+                                <input type="radio" name="autoDefenseRoughTerrain" value="Miss" id="adRoughTerrainMiss">
+                                <label for="adRoughTerrainMiss">Miss</label>
+                            </fieldset>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Low bar</legend>
+                            <input type="checkbox" name="autoDefenseLowbar" value="Make" id="adLowbar">
+                            <label for="adLowbar" class="noPicture">Breached</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Shooting</legend>
+                            <input type="checkbox" name="autoDefenseGrabBall" value="ballGrabbed" id="adGrabBall">
+                            <label for="adGrabBall">Ball grabbed</label>
+                            <div class="highGoals">
+                                <h2>High goals</h2>
+                                <span class="goals makes">0</span>
+                                <br />
+                                <span class="goals misses">0</span>
+                            </div>
+                            <div class="lowGoals">
+                                <h2>Low goals</h2>
+                                <span class="goals makes">0</span>
+                                <br />
+                                <span class="goals misses">0</span>
+                            </div>
+                        </fieldset>
+                </fieldset>
+                <fieldset class="defenses">
                     <legend>Defenses breached</legend>
                     <fieldset>
                         <legend>A</legend>
-                        <label>Portcullis</label>
-                        <input type="number" name="Portcullis" min="0" max="10" value="0">
-                        <label>Cheval de Frise</label>
-                        <input type="number" name="Cheval de Frise" min="0" max="10" value="0">
+                        <input type="radio" name="bdCatA" value="Portcullis" id="bdPortcullis">
+                        <label for="bdPortcullis">Portcullis</label>
+                        <input type="radio" name="bdCatA" value="Cheval de Frise" id="bdChevalDeFrise">
+                        <label for="bdChevalDeFrise">Cheval de Frise</label>
+                        <br /><span class="bd makes">0</span>
+                        <br /><span class="bd misses">0</span>
+                        <br /><span class="bd successRate">0% success</span>
                     </fieldset>
                     <fieldset>
                         <legend>B</legend>
-                        <label>Moat</label>
-                        <input type="number" name="Moat" min="0" max="10" value="0">
-                        <label>Ramparts</label>
-                        <input type="number" name="Ramparts" min="0" max="10" value="0">
+                        <input type="radio" name="bdCatB" value="Moat" id="bdMoat">
+                        <label for="bdMoat">Moat</label>
+                        <input type="radio" name="bdCatB" value="Ramparts" id="bdRamparts">
+                        <label for="bdRamparts">Ramparts</label>
+                        <br /><span class="bd makes">0</span>
+                        <br /><span class="bd misses">0</span>
+                        <br /><span class="bd successRate">0% success</span>
                     </fieldset>
                     <fieldset>
                         <legend>C</legend>
-                        <label>Drawbridge</label>
-                        <input type="number" name="Drawbridge" min="0" max="10" value="0">
-                        <label>Sally Port</label>
-                        <input type="number" name="Sally Port" min="0" max="10" value="0">
+                        <input type="radio" name="bdCatC" value="Drawbridge" id="bdDrawbridge">
+                        <label for="bdDrawbridge">Drawbridge</label>
+                        <input type="radio" name="bdCatC" value="Sally Port" id="bdSallyPort">
+                        <label for="bdSallyPort">Sally Port</label>
+                        <br /><span class="bd makes">0</span>
+                        <br /><span class="bd misses">0</span>
+                        <br /><span class="bd successRate">0% success</span>
                     </fieldset>
                     <fieldset>
                         <legend>D</legend>
-                        <label>Rock Wall</label>
-                        <input type="number" name="Rock Wall" min="0" max="10" value="0">
-                        <label>Rough Terrain</label>
-                        <input type="number" name="Rough Terrain" min="0" max="10" value="0">
+                        <input type="radio" name="bdCatD" value="Rock Wall" id="bdRockWall">
+                        <label for="bdRockWall">Rock Wall</label>
+                        <input type="radio" name="bdCatD" value="Rough Terrain" id="bdRoughTerrain">
+                        <label for="bdRoughTerrain">Rough Terrain</label>
+                        <br /><span class="bd makes">0</span>
+                        <br /><span class="bd misses">0</span>
+                        <br /><span class="bd successRate">0% success</span>
                     </fieldset>
                     <fieldset>
                         <legend>Low bar</legend>
-                        <input type="checkbox" name="lowbarSuccessful" value="successful"><label class="noPicture">Breached</label>
+                        <input type="checkbox" name="lowbarSuccessful" value="successful" id="bdLowbar">
+                        <label for="bdLowbar" class="noPicture">Breached</label>
                     </fieldset>
                 </fieldset>
                 <fieldset>
                     <legend>Shooting</legend>
-                    <label>High goals scored:</label>
-                    <input type="number" name="highGoals" min="0" max="99" value="0">
-                    <br />
-                    <label>Low goals scored:</label>
-                    <input type="number" name="lowGoals" min="0" max="99" value="0">
+                    <div class="highGoals">
+                        <h2>High goals</h2>
+                        <span class="goals makes">0</span>
+                        <br />
+                        <span class="goals misses">0</span>
+                    </div>
+                    <div class="lowGoals">
+                        <h2>Low goals</h2>
+                        <span class="goals makes">0</span>
+                        <br />
+                        <span class="goals misses">0</span>
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <legend>Specialties</legend>
-                    <input type="checkbox" name="specialty" value="shooting"><label>Shooting</label>
-                    <input type="checkbox" name="specialty" value="breaching"><label>Breaching</label>
-                    <input type="checkbox" name="specialty" value="defending"><label>Defending</label>
+                    <legend>Roles</legend>
+                    <input type="checkbox" name="gameRole" value="highShooting" id="gameHighShootingSpecialty">
+                    <label for="gameHighShootingSpecialty">High shooting</label>
+                    <input type="checkbox" name="gameRole" value="lowShooting" id="gameLowShootingSpecialty">
+                    <label for="gameLowShootingSpecialty">Low shooting</label>
+                    <input type="checkbox" name="gameRole" value="breaching" id="gameBreachingSpecialty">
+                    <label for="gameBreachingSpecialty">Breaching</label>
+                    <input type="checkbox" name="gameRole" value="defending" id="gameDefendingSpecialty">
+                    <label for="gameDefendingSpecialty">Defending</label>
                 </fieldset>
                 <fieldset>
                     <legend>Scaling Endgame</legend>
-                    <input type="checkbox" name="scalingCapable" value="capable"><label>Capable</label>
-                    <input type="checkbox" name="scalingSuccessful" value="successful"><label>Successful</label>
+                    <input type="checkbox" name="scalingSuccessful" value="successful" id="scalingSuccessful">
+                    <label for="scalingSuccessful">Successful</label>
                 </fieldset>
             </div>
             <button id="generateQR">Generate QR Code</button>
