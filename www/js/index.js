@@ -64,6 +64,14 @@ var app = {
             );
         });
 
+        function getPitData() {
+            var teamNumber = $("#pitTeamNumber").val();
+            while(teamNumber.length < 4) {
+                teamNumber = "0" + teamNumber;
+            }
+            return teamNumber;
+        }
+
         function getGameData() {
             var teamNumber = $("#gameTeamNumber").val();
             while(teamNumber.length < 4) {
@@ -177,7 +185,7 @@ var app = {
             var values = encodedText.split(" ");
             for(var i = 0; i < values.length; i++) {
                 values[i] = parseInt(values[i], 10);
-                if($.inArray(i, [1,2,11,12,29,35,36,37,38,39,40])) {
+                if($.inArray(i, [1,2,11,12,29,35,36,37,38,39,40]) !== -1) {
                     values[i] = (values[i]) ? "TRUE" : "FALSE";
                 }
             }
