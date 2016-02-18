@@ -73,13 +73,13 @@ legend {
 }
 
 .defenses label img,
-#autonomous fieldset fieldset legend img {
+#autonomous legend span img {
     display: none;
     z-index: 10; /* should always be top */
 }
 
 .defenses label img.visible,
-#autonomous fieldset fieldset legend img.visible {
+#autonomous legend span img.visible {
     display: block;
     position: fixed;
     top: 0;
@@ -193,8 +193,6 @@ input:not([type="number"]):checked + label span {
     border-bottom: 2px solid #c5db15;
 } #autonomous input[value="2"] + label {
     border-bottom: 2px solid #d2260f;
-} #autonomous input[value="3"] + label {
-    border-bottom: 2px solid #888;
 }
 
 #autonomous input[value="0"]:checked + label span {
@@ -203,8 +201,4 @@ input:not([type="number"]):checked + label span {
     background: #c5db15;
 } #autonomous input[value="2"]:checked + label span {
     background: #d2260f;
-} #autonomous input[value="3"]:checked + label span {
-    background: #000;
-}  #autonomous input[value="3"]:checked + label span::after {
-    background: #aaa;
 }

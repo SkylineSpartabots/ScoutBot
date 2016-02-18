@@ -44,6 +44,47 @@
                     <input type="radio" name="alliance" value="Red" id="pitRedAlliance">
                     <label for="pitRedAlliance">Red</label> -->
                 </fieldset>
+                <fieldset>
+                    <legend>Autonomous abilities</legend>
+                    <fieldset class="defenses">
+                        <legend>Defenses can cross (auto)</legend>
+                        <fieldset>
+                            <legend>A</legend>
+                            <input type="checkbox" name="psAPortcullis" value="true" id="psAPortcullis">
+                            <label for="psAPortcullis">Portcullis</label>
+                            <input type="checkbox" name="psAChevalDeFrise" value="true" id="psAChevalDeFrise">
+                            <label for="psAChevalDeFrise">Cheval de Frise</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>B</legend>
+                            <input type="checkbox" name="psAMoat" value="true" id="psAMoat">
+                            <label for="psAMoat">Moat</label>
+                            <input type="checkbox" name="psARamparts" value="true" id="psARamparts">
+                            <label for="psARamparts">Ramparts</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>C</legend>
+                            <input type="checkbox" name="psADrawbridge" value="true" id="psADrawbridge">
+                            <label for="psADrawbridge">Drawbridge</label>
+                            <input type="checkbox" name="psASallyPort" value="true" id="psASallyPort">
+                            <label for="psASallyPort">Sally Port</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>D</legend>
+                            <input type="checkbox" name="psARockWall" value="true" id="psARockWall">
+                            <label for="psARockWall">Rock Wall</label>
+                            <input type="checkbox" name="psARoughTerrain" value="true" id="psARoughTerrain">
+                            <label for="psARoughTerrain">Rough Terrain</label>
+                        </fieldset>
+                        <input type="checkbox" name="psALowbar" value="true" id="psALowbar">
+                        <label for="psALowbar" class="noPicture">Low Bar</label>
+                        <br />
+                        <input type="checkbox" name="psAReachDefense" value="true" id="psAReachDefense">
+                        <label for="psAReachDefense" class="noPicture">Can reach defenses</label>
+                    </fieldset>
+                    <input type="checkbox" name="psAGrabBall" value="true" id="psAGrabBall">
+                    <label for="psAGrabBall">Can grab ball (auto)</label>
+                </fieldset> <!-- end auto abilities -->
                 <fieldset class="defenses">
                     <legend>Defenses can cross</legend>
                     <fieldset>
@@ -83,6 +124,8 @@
                     <label for="psHighGoals">Can shoot high</label>
                     <input type="checkbox" name="psLowGoals" value="true" id="psLowGoals">
                     <label for="psLowGoals">Can shoot low</label>
+                    <input type="checkbox" name="psGrabBall" value="true" id="psGrabBall">
+                    <label for="psGrabBall">Can grab ball</label>
                 </fieldset>
                 <fieldset>
                     <legend>Roles</legend>
@@ -147,96 +190,40 @@
                 <fieldset id="autonomous">
                     <legend>Autonomous</legend>
                     <fieldset>
-                        <legend>A</legend>
-                        <fieldset>
-                            <legend>Portcullis</legend>
-                            <input type="radio" name="autoDefensePortcullis" value="0" id="adPortcullisMake">
-                            <label for="adPortcullisMake">Make</label>
-                            <input type="radio" name="autoDefensePortcullis" value="1" id="adPortcullisReach">
-                            <label for="adPortcullisReach">Reach</label>
-                            <input type="radio" name="autoDefensePortcullis" value="2" id="adPortcullisMiss">
-                            <label for="adPortcullisMiss">Miss</label>
-                            <input type="radio" name="autoDefensePortcullis" value="3" id="adPortcullisNA">
-                            <label for="adPortcullisNA">N/A</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Cheval De Frise</legend>
-                            <input type="radio" name="autoDefenseChevalDeFrise" value="0" id="adChevalDeFriseMake">
-                            <label for="adChevalDeFriseMake">Make</label>
-                            <input type="radio" name="autoDefenseChevalDeFrise" value="1" id="adChevalDeFriseReach">
-                            <label for="adChevalDeFriseReach">Reach</label>
-                            <input type="radio" name="autoDefenseChevalDeFrise" value="2" id="adChevalDeFriseMiss">
-                            <label for="adChevalDeFriseMiss">Miss</label>
-                            <input type="radio" name="autoDefenseChevalDeFrise" value="3" id="adChevalDeFriseNA">
-                            <label for="adChevalDeFriseNA">N/A</label>
-                        </fieldset>
+                        <legend>(A) <span>Portcullis</span>/<span>Cheval de Frise</span></legend>
+                        <input type="radio" name="adCatA" value="0" id="adCatAMake">
+                        <label for="adCatAMake">Make</label>
+                        <input type="radio" name="adCatA" value="1" id="adCatAReach">
+                        <label for="adCatAReach">Reach</label>
+                        <input type="radio" name="adCatA" value="2" id="adCatAMiss" checked="checked">
+                        <label for="adCatAMiss">Miss</label>
                     </fieldset>
                     <fieldset>
-                        <legend>B</legend>
-                        <fieldset>
-                            <legend>Moat</legend>
-                            <input type="radio" name="autoDefenseMoat" value="0" id="adMoatMake">
-                            <label for="adMoatMake">Make</label>
-                            <input type="radio" name="autoDefenseMoat" value="1" id="adMoatReach">
-                            <label for="adMoatReach">Reach</label>
-                            <input type="radio" name="autoDefenseMoat" value="2" id="adMoatMiss">
-                            <label for="adMoatMiss">Miss</label>
-                            <input type="radio" name="autoDefenseMoat" value="3" id="adMoatNA">
-                            <label for="adMoatNA">N/A</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Ramparts</legend>
-                            <input type="radio" name="autoDefenseRamparts" value="0" id="adRampartsMake">
-                            <label for="adRampartsMake">Make</label>
-                            <input type="radio" name="autoDefenseRamparts" value="1" id="adRampartsReach">
-                            <label for="adRampartsReach">Reach</label>
-                            <input type="radio" name="autoDefenseRamparts" value="2" id="adRampartsMiss">
-                            <label for="adRampartsMiss">Miss</label>
-                            <input type="radio" name="autoDefenseRamparts" value="3" id="adRampartsNA">
-                            <label for="adRampartsNA">N/A</label>
-                        </fieldset>
+                        <legend>(B) <span>Moat</span>/<span>Ramparts</span></legend>
+                        <input type="radio" name="adCatB" value="0" id="adCatBMake">
+                        <label for="adCatBMake">Make</label>
+                        <input type="radio" name="adCatB" value="1" id="adCatBReach">
+                        <label for="adCatBReach">Reach</label>
+                        <input type="radio" name="adCatB" value="2" id="adCatBMiss" checked="checked">
+                        <label for="adCatBMiss">Miss</label>
                     </fieldset>
                     <fieldset>
-                        <legend>C</legend>
-                        <fieldset>
-                            <legend>Drawbridge</legend>
-                            <input type="radio" name="autoDefenseDrawbridge" value="0" id="adDrawbridgeMake">
-                            <label for="adDrawbridgeMake">Make</label>
-                            <input type="radio" name="autoDefenseDrawbridge" value="1" id="adDrawbridgeReach">
-                            <label for="adDrawbridgeReach">Reach</label>
-                            <input type="radio" name="autoDefenseDrawbridge" value="2" id="adDrawbridgeMiss">
-                            <label for="adDrawbridgeMiss">Miss</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Sally Port</legend>
-                            <input type="radio" name="autoDefenseSallyPort" value="0" id="adSallyPortMake">
-                            <label for="adSallyPortMake">Make</label>
-                            <input type="radio" name="autoDefenseSallyPort" value="1" id="adSallyPortReach">
-                            <label for="adSallyPortReach">Reach</label>
-                            <input type="radio" name="autoDefenseSallyPort" value="2" id="adSallyPortMiss">
-                            <label for="adSallyPortMiss">Miss</label>
-                        </fieldset>
+                        <legend>(C) <span>Drawbridge</span>/<span>Sally Port</span></legend>
+                        <input type="radio" name="adCatC" value="0" id="adCatCMake">
+                        <label for="adCatCMake">Make</label>
+                        <input type="radio" name="adCatC" value="1" id="adCatCReach">
+                        <label for="adCatCReach">Reach</label>
+                        <input type="radio" name="adCatC" value="2" id="adCatCMiss" checked="checked">
+                        <label for="adCatCMiss">Miss</label>
                     </fieldset>
                     <fieldset>
-                        <legend>D</legend>
-                        <fieldset>
-                            <legend>Rock Wall</legend>
-                            <input type="radio" name="autoDefenseRockWall" value="0" id="adRockWallMake">
-                            <label for="adRockWallMake">Make</label>
-                            <input type="radio" name="autoDefenseRockWall" value="1" id="adRockWallReach">
-                            <label for="adRockWallReach">Reach</label>
-                            <input type="radio" name="autoDefenseRockWall" value="2" id="adRockWallMiss">
-                            <label for="adRockWallMiss">Miss</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Rough Terrain</legend>
-                            <input type="radio" name="autoDefenseRoughTerrain" value="0" id="adRoughTerrainMake">
-                            <label for="adRoughTerrainMake">Make</label>
-                            <input type="radio" name="autoDefenseRoughTerrain" value="1" id="adRoughTerrainReach">
-                            <label for="adRoughTerrainReach">Reach</label>
-                            <input type="radio" name="autoDefenseRoughTerrain" value="2" id="adRoughTerrainMiss">
-                            <label for="adRoughTerrainMiss">Miss</label>
-                        </fieldset>
+                        <legend>(D) <span>Rock Wall</span>/<span>Rough Terrain</span></legend>
+                        <input type="radio" name="adCatD" value="0" id="adCatDMake">
+                        <label for="adCatDMake">Make</label>
+                        <input type="radio" name="adCatD" value="1" id="adCatDReach">
+                        <label for="adCatDReach">Reach</label>
+                        <input type="radio" name="adCatD" value="2" id="adCatDMiss" checked="checked">
+                        <label for="adCatDMiss">Miss</label>
                     </fieldset>
                     <fieldset>
                         <legend>Low bar</legend>
@@ -318,6 +305,10 @@
                         <span class="goals makes">0</span>
                         <br />
                         <span class="goals misses">0</span>
+                    </div>
+                    <div class="ballPickedUp">
+                        <h2>Times ball picked up</h2>
+                        <span class="counter">0</span>
                     </div>
                 </fieldset>
                 <fieldset>

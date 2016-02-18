@@ -11,7 +11,7 @@ var app = {
 
         $("label").prepend("<span></span>");
 
-        var defenseLabels = $(".defenses label:not(.noPicture), #autonomous fieldset fieldset legend");
+        var defenseLabels = $(".defenses label:not(.noPicture), #autonomous legend span");
         for(var i = 0; i < defenseLabels.length; i++) {
             var imageUrl = "img/" + $(defenseLabels[i]).text().replace(/ /g,"_").toLowerCase() + ".png";
             var image = $("<img src='" + imageUrl + "'>");
@@ -29,10 +29,10 @@ var app = {
             return false;
         });
 
-        var breachedDefenses = $(".game.view .defenses")[1];
+        var breachedDefenses = $(".game.view .defenses.breached");
         var buttonHTML = "<button class='minus'></button><button class='plus'></button>";
-        $(breachedDefenses).children("fieldset").children("span.makes, span.misses").after(buttonHTML);
-        $("span.goals.makes, span.goals.misses").after(buttonHTML);
+        breachedDefenses.children("fieldset").children("span.makes, span.misses").after(buttonHTML);
+        $("span.goals.makes, span.goals.misses, span.counter").after(buttonHTML);
         $("button.minus").click(function() {
             var input = $(this).prevAll("span")[0];
             if($(input).text() > 0) $(input).text( +$(input).text() - 1);
@@ -52,7 +52,8 @@ var app = {
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if(!result.cancelled) {
-                        alert(result.text);
+                        var finalRow = decode(result.text);
+                        alert(finalRow);
                     } else {
                         alert("Scan cancelled, data not saved");
                     }
@@ -64,7 +65,11 @@ var app = {
         });
 
         function getGameData() {
-            var teamNumber = +$("#gameTeamNumber").val();
+            var teamNumber = $("#gameTeamNumber").val();
+            while(teamNumber.length < 4) {
+                teamNumber = "0" + teamNumber;
+            }
+
             var fouled = isChecked("fouled");
             var deadBot = isChecked("deadBot");
 
@@ -76,71 +81,61 @@ var app = {
             };
 
             var ad = {
-                a: [
-                    getRadio("autoDefensePortcullis"),
-                    getRadio("autoDefenseChevalDeFrise")
-                ],
-                b: [
-                    getRadio("autoDefenseMoat"),
-                    getRadio("autoDefenseRamparts")
-                ],
-                c: [
-                    getRadio("autoDefenseDrawbridge"),
-                    getRadio("autoDefenseSallyPort")
-                ],
-                d: [
-                    getRadio("autoDefenseRockWall"),
-                    getRadio("autoDefenseRoughTerrain")
-                ],
+                a: getRadio("adCatA"),
+                b: getRadio("adCatB"),
+                c: getRadio("adCatC"),
+                d: getRadio("adCatD"),
                 lowbar: isChecked("adLowbar"),
                 grabBall: isChecked("adGrabBall")
             };
 
             var aGoals = {
                 high: {
-                    makes: $("#autonomous .highGoals .goals.makes").text(),
-                    misses: $("#autonomous .highGoals .goals.misses").text()
+                    makes: getTwoDigit("#autonomous .highGoals .goals.makes"),
+                    misses: getTwoDigit("#autonomous .highGoals .goals.misses")
                 },
                 low: {
-                    makes: $("#autonomous .lowGoals .goals.makes").text(),
-                    misses: $("#autonomous .lowGoals .goals.misses").text()
+                    makes: getTwoDigit("#autonomous .lowGoals .goals.makes"),
+                    misses: getTwoDigit("#autonomous .lowGoals .goals.misses")
                 }
             };
 
             var bd = {
                 a: {
                     defense: getRadio("bdCatA"),
-                    makes: $(".bdCatA.makes").text(),
-                    misses: $(".bdCatA.misses").text()
+                    makes: getTwoDigit(".bdCatA.makes"),
+                    misses: getTwoDigit(".bdCatA.misses")
                 },
                 b: {
                     defense: getRadio("bdCatB"),
-                    makes: $(".bdCatB.makes").text(),
-                    misses: $(".bdCatB.misses").text()
+                    makes: getTwoDigit(".bdCatB.makes"),
+                    misses: getTwoDigit(".bdCatB.misses")
                 },
                 c: {
                     defense: getRadio("bdCatC"),
-                    makes: $(".bdCatC.makes").text(),
-                    misses: $(".bdCatC.misses").text()
+                    makes: getTwoDigit(".bdCatC.makes"),
+                    misses: getTwoDigit(".bdCatC.misses")
                 },
                 d: {
                     defense: getRadio("bdCatD"),
-                    makes: $(".bdCatD.makes").text(),
-                    misses: $(".bdCatD.misses").text()
+                    makes: getTwoDigit(".bdCatD.makes"),
+                    misses: getTwoDigit(".bdCatD.misses")
                 },
                 lowbar: isChecked("bdLowbar")
             };
 
             var goals = {
                 high: {
-                    makes: $(".nonAutonomous .highGoals .goals.makes").text(),
-                    misses: $(".nonAutonomous .highGoals .goals.misses").text()
+                    makes: getTwoDigit(".nonAutonomous .highGoals .goals.makes"),
+                    misses: getTwoDigit(".nonAutonomous .highGoals .goals.misses")
                 },
                 low: {
-                    makes: $(".nonAutonomous .lowGoals .goals.makes").text(),
-                    misses: $(".nonAutonomous .lowGoals .goals.misses").text()
+                    makes: getTwoDigit(".nonAutonomous .lowGoals .goals.makes"),
+                    misses: getTwoDigit(".nonAutonomous .lowGoals .goals.misses")
                 }
             };
+
+            var timesBallPickedUp = getTwoDigit(".nonAutonomous .ballPickedUp span.counter");
 
             var gameRoles = {
                 highShooting : isChecked("gameHighShootingSpecialty"),
@@ -152,7 +147,9 @@ var app = {
             var challengedTower = isChecked("challengedTower");
             var scalingSuccessful = isChecked("scalingSuccessful");
 
-            return teamNumber + " " + fouled  + " " + deadBot + " " +  cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a[0] + " " + ad.a[1] + " " + ad.b[0] + " " + ad.b[1] + " " + ad.c[0] + " " + ad.c[1] + " " + ad.d[0] + " " + ad.d[1]  + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + challengedTower + " " + scalingSuccessful;
+            var encodedText = teamNumber + " " + fouled  + " " + deadBot + " " + cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a + " " + ad.b + " " + ad.c + " " + ad.d + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses  + " " + timesBallPickedUp + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + challengedTower + " " + scalingSuccessful;
+
+            return encodedText;
         }
 
         function getRadio(groupName) {
@@ -166,6 +163,27 @@ var app = {
 
         function isChecked(checkboxId) {
             return ($("#" + checkboxId).is(":checked")) ? "1" : "0";
+        }
+
+        function getTwoDigit(selector) {
+            var possiblySingleDigit = $(selector).text();
+            while(possiblySingleDigit.length < 2) {
+                possiblySingleDigit = "0" + possiblySingleDigit;
+            }
+            return possiblySingleDigit;
+        }
+
+        function decode(encodedText) {
+            var values = encodedText.split(" ");
+            for(var i = 0; i < values.length; i++) {
+                values[i] = parseInt(values[i], 10);
+                if($.inArray(i, [1,2,11,12,29,35,36,37,38,39,40])) {
+                    values[i] = (values[i]) ? "TRUE" : "FALSE";
+                }
+            }
+
+            var finalRow = values.join(",");
+            return finalRow;
         }
     }
 };
