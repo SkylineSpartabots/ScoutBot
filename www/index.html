@@ -99,8 +99,8 @@
             <div class="game view">
                 <fieldset>
                     <legend>Team basic info</legend>
-                    <label>Team number:</label>
-                    <input type="number" name="teamNumber" min="1" max="6300" placeholder="e.g. 2976" />
+                    <label for="gameTeamNumber">Team number:</label>
+                    <input type="number" name="teamNumber" id="gameTeamNumber" min="1" max="6300" placeholder="e.g. 2976" />
                     <br />
                     <!-- <input type="radio" name="alliance" value="Blue" id="gameBlueAlliance">
                     <label for="gameBlueAlliance">Blue</label>
@@ -117,183 +117,187 @@
                     <legend>Defenses chosen</legend>
                     <fieldset>
                         <legend>A</legend>
-                        <input type="radio" name="cdCatA" value="Portcullis" id="cdPortcullis">
+                        <input type="radio" name="cdCatA" value="0" id="cdPortcullis">
                         <label for="cdPortcullis">Portcullis</label>
-                        <input type="radio" name="cdCatA" value="Cheval de Frise" id="cdChevalDeFrise">
+                        <input type="radio" name="cdCatA" value="1" id="cdChevalDeFrise">
                         <label for="cdChevalDeFrise">Cheval de Frise</label>
                     </fieldset>
                     <fieldset>
                         <legend>B</legend>
-                        <input type="radio" name="cdCatB" value="Moat" id="cdMoat">
+                        <input type="radio" name="cdCatB" value="0" id="cdMoat">
                         <label for="cdMoat">Moat</label>
-                        <input type="radio" name="cdCatB" value="Ramparts" id="cdRamparts">
+                        <input type="radio" name="cdCatB" value="1" id="cdRamparts">
                         <label for="cdRamparts">Ramparts</label>
                     </fieldset>
                     <fieldset>
                         <legend>C</legend>
-                        <input type="radio" name="cdCatC" value="Drawbridge" id="cdDrawbridge">
+                        <input type="radio" name="cdCatC" value="0" id="cdDrawbridge">
                         <label for="cdDrawbridge">Drawbridge</label>
-                        <input type="radio" name="cdCatC" value="Sally Port" id="cdSallyPort">
+                        <input type="radio" name="cdCatC" value="1" id="cdSallyPort">
                         <label for="cdSallyPort">Sally Port</label>
                     </fieldset>
                     <fieldset>
                         <legend>D</legend>
-                        <input type="radio" name="cdCatD" value="Rock Wall" id="cdRockWall">
+                        <input type="radio" name="cdCatD" value="0" id="cdRockWall">
                         <label for="cdRockWall">Rock Wall</label>
-                        <input type="radio" name="cdCatD" value="Rough Terrain" id="cdRoughTerrain">
+                        <input type="radio" name="cdCatD" value="1" id="cdRoughTerrain">
                         <label for="cdRoughTerrain">Rough Terrain</label>
                     </fieldset>
                 </fieldset>
                 <fieldset id="autonomous">
                     <legend>Autonomous</legend>
-                        <fieldset>
-                            <legend>A</legend>
-                            <fieldset>
-                                <legend>Portcullis</legend>
-                                <input type="radio" name="autoDefensePortcullis" value="Make" id="adPortcullisMake">
-                                <label for="adPortcullisMake">Make</label>
-                                <input type="radio" name="autoDefensePortcullis" value="Reach" id="adPortcullisReach">
-                                <label for="adPortcullisReach">Reach</label>
-                                <input type="radio" name="autoDefensePortcullis" value="Miss" id="adPortcullisMiss">
-                                <label for="adPortcullisMiss">Miss</label>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Cheval De Frise</legend>
-                                <input type="radio" name="autoDefenseChevalDeFrise" value="Make" id="adChevalDeFriseMake">
-                                <label for="adChevalDeFriseMake">Make</label>
-                                <input type="radio" name="autoDefenseChevalDeFrise" value="Reach" id="adChevalDeFriseReach">
-                                <label for="adChevalDeFriseReach">Reach</label>
-                                <input type="radio" name="autoDefenseChevalDeFrise" value="Miss" id="adChevalDeFriseMiss">
-                                <label for="adChevalDeFriseMiss">Miss</label>
-                            </fieldset>
-                        </fieldset>
-                        <fieldset>
-                            <legend>B</legend>
-                            <fieldset>
-                                <legend>Moat</legend>
-                                <input type="radio" name="autoDefenseMoat" value="Make" id="adMoatMake">
-                                <label for="adMoatMake">Make</label>
-                                <input type="radio" name="autoDefenseMoat" value="Reach" id="adMoatReach">
-                                <label for="adMoatReach">Reach</label>
-                                <input type="radio" name="autoDefenseMoat" value="Miss" id="adMoatMiss">
-                                <label for="adMoatMiss">Miss</label>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Ramparts</legend>
-                                <input type="radio" name="autoDefenseRamparts" value="Make" id="adRampartsMake">
-                                <label for="adRampartsMake">Make</label>
-                                <input type="radio" name="autoDefenseRamparts" value="Reach" id="adRampartsReach">
-                                <label for="adRampartsReach">Reach</label>
-                                <input type="radio" name="autoDefenseRamparts" value="Miss" id="adRampartsMiss">
-                                <label for="adRampartsMiss">Miss</label>
-                            </fieldset>
-                        </fieldset>
-                        <fieldset>
-                            <legend>C</legend>
-                            <fieldset>
-                                <legend>Drawbridge</legend>
-                                <input type="radio" name="autoDefenseDrawbridge" value="Make" id="adDrawbridgeMake">
-                                <label for="adDrawbridgeMake">Make</label>
-                                <input type="radio" name="autoDefenseDrawbridge" value="Reach" id="adDrawbridgeReach">
-                                <label for="adDrawbridgeReach">Reach</label>
-                                <input type="radio" name="autoDefenseDrawbridge" value="Miss" id="adDrawbridgeMiss">
-                                <label for="adDrawbridgeMiss">Miss</label>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Sally Port</legend>
-                                <input type="radio" name="autoDefenseSallyPort" value="Make" id="adSallyPortMake">
-                                <label for="adSallyPortMake">Make</label>
-                                <input type="radio" name="autoDefenseSallyPort" value="Reach" id="adSallyPortReach">
-                                <label for="adSallyPortReach">Reach</label>
-                                <input type="radio" name="autoDefenseSallyPort" value="Miss" id="adSallyPortMiss">
-                                <label for="adSallyPortMiss">Miss</label>
-                            </fieldset>
-                        </fieldset>
-                        <fieldset>
-                            <legend>D</legend>
-                            <fieldset>
-                                <legend>Rock Wall</legend>
-                                <input type="radio" name="autoDefenseRockWall" value="Make" id="adRockWallMake">
-                                <label for="adRockWallMake">Make</label>
-                                <input type="radio" name="autoDefenseRockWall" value="Reach" id="adRockWallReach">
-                                <label for="adRockWallReach">Reach</label>
-                                <input type="radio" name="autoDefenseRockWall" value="Miss" id="adRockWallMiss">
-                                <label for="adRockWallMiss">Miss</label>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Rough Terrain</legend>
-                                <input type="radio" name="autoDefenseRoughTerrain" value="Make" id="adRoughTerrainMake">
-                                <label for="adRoughTerrainMake">Make</label>
-                                <input type="radio" name="autoDefenseRoughTerrain" value="Reach" id="adRoughTerrainReach">
-                                <label for="adRoughTerrainReach">Reach</label>
-                                <input type="radio" name="autoDefenseRoughTerrain" value="Miss" id="adRoughTerrainMiss">
-                                <label for="adRoughTerrainMiss">Miss</label>
-                            </fieldset>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Low bar</legend>
-                            <input type="checkbox" name="autoDefenseLowbar" value="Make" id="adLowbar">
-                            <label for="adLowbar" class="noPicture">Breached</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Shooting</legend>
-                            <input type="checkbox" name="autoDefenseGrabBall" value="ballGrabbed" id="adGrabBall">
-                            <label for="adGrabBall">Ball grabbed</label>
-                            <div class="highGoals">
-                                <h2>High goals</h2>
-                                <span class="goals makes">0</span>
-                                <br />
-                                <span class="goals misses">0</span>
-                            </div>
-                            <div class="lowGoals">
-                                <h2>Low goals</h2>
-                                <span class="goals makes">0</span>
-                                <br />
-                                <span class="goals misses">0</span>
-                            </div>
-                        </fieldset>
-                </fieldset>
-                <fieldset class="defenses">
-                    <legend>Defenses breached</legend>
                     <fieldset>
                         <legend>A</legend>
-                        <input type="radio" name="bdCatA" value="Portcullis" id="bdPortcullis">
-                        <label for="bdPortcullis">Portcullis</label>
-                        <input type="radio" name="bdCatA" value="Cheval de Frise" id="bdChevalDeFrise">
-                        <label for="bdChevalDeFrise">Cheval de Frise</label>
-                        <br /><span class="bd makes">0</span>
-                        <br /><span class="bd misses">0</span>
-                        <br /><span class="bd successRate">0% success</span>
+                        <fieldset>
+                            <legend>Portcullis</legend>
+                            <input type="radio" name="autoDefensePortcullis" value="0" id="adPortcullisMake">
+                            <label for="adPortcullisMake">Make</label>
+                            <input type="radio" name="autoDefensePortcullis" value="1" id="adPortcullisReach">
+                            <label for="adPortcullisReach">Reach</label>
+                            <input type="radio" name="autoDefensePortcullis" value="2" id="adPortcullisMiss">
+                            <label for="adPortcullisMiss">Miss</label>
+                            <input type="radio" name="autoDefensePortcullis" value="3" id="adPortcullisNA">
+                            <label for="adPortcullisNA">N/A</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Cheval De Frise</legend>
+                            <input type="radio" name="autoDefenseChevalDeFrise" value="0" id="adChevalDeFriseMake">
+                            <label for="adChevalDeFriseMake">Make</label>
+                            <input type="radio" name="autoDefenseChevalDeFrise" value="1" id="adChevalDeFriseReach">
+                            <label for="adChevalDeFriseReach">Reach</label>
+                            <input type="radio" name="autoDefenseChevalDeFrise" value="2" id="adChevalDeFriseMiss">
+                            <label for="adChevalDeFriseMiss">Miss</label>
+                            <input type="radio" name="autoDefenseChevalDeFrise" value="3" id="adChevalDeFriseNA">
+                            <label for="adChevalDeFriseNA">N/A</label>
+                        </fieldset>
                     </fieldset>
                     <fieldset>
                         <legend>B</legend>
-                        <input type="radio" name="bdCatB" value="Moat" id="bdMoat">
-                        <label for="bdMoat">Moat</label>
-                        <input type="radio" name="bdCatB" value="Ramparts" id="bdRamparts">
-                        <label for="bdRamparts">Ramparts</label>
-                        <br /><span class="bd makes">0</span>
-                        <br /><span class="bd misses">0</span>
-                        <br /><span class="bd successRate">0% success</span>
+                        <fieldset>
+                            <legend>Moat</legend>
+                            <input type="radio" name="autoDefenseMoat" value="0" id="adMoatMake">
+                            <label for="adMoatMake">Make</label>
+                            <input type="radio" name="autoDefenseMoat" value="1" id="adMoatReach">
+                            <label for="adMoatReach">Reach</label>
+                            <input type="radio" name="autoDefenseMoat" value="2" id="adMoatMiss">
+                            <label for="adMoatMiss">Miss</label>
+                            <input type="radio" name="autoDefenseMoat" value="3" id="adMoatNA">
+                            <label for="adMoatNA">N/A</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Ramparts</legend>
+                            <input type="radio" name="autoDefenseRamparts" value="0" id="adRampartsMake">
+                            <label for="adRampartsMake">Make</label>
+                            <input type="radio" name="autoDefenseRamparts" value="1" id="adRampartsReach">
+                            <label for="adRampartsReach">Reach</label>
+                            <input type="radio" name="autoDefenseRamparts" value="2" id="adRampartsMiss">
+                            <label for="adRampartsMiss">Miss</label>
+                            <input type="radio" name="autoDefenseRamparts" value="3" id="adRampartsNA">
+                            <label for="adRampartsNA">N/A</label>
+                        </fieldset>
                     </fieldset>
                     <fieldset>
                         <legend>C</legend>
-                        <input type="radio" name="bdCatC" value="Drawbridge" id="bdDrawbridge">
-                        <label for="bdDrawbridge">Drawbridge</label>
-                        <input type="radio" name="bdCatC" value="Sally Port" id="bdSallyPort">
-                        <label for="bdSallyPort">Sally Port</label>
-                        <br /><span class="bd makes">0</span>
-                        <br /><span class="bd misses">0</span>
-                        <br /><span class="bd successRate">0% success</span>
+                        <fieldset>
+                            <legend>Drawbridge</legend>
+                            <input type="radio" name="autoDefenseDrawbridge" value="0" id="adDrawbridgeMake">
+                            <label for="adDrawbridgeMake">Make</label>
+                            <input type="radio" name="autoDefenseDrawbridge" value="1" id="adDrawbridgeReach">
+                            <label for="adDrawbridgeReach">Reach</label>
+                            <input type="radio" name="autoDefenseDrawbridge" value="2" id="adDrawbridgeMiss">
+                            <label for="adDrawbridgeMiss">Miss</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Sally Port</legend>
+                            <input type="radio" name="autoDefenseSallyPort" value="0" id="adSallyPortMake">
+                            <label for="adSallyPortMake">Make</label>
+                            <input type="radio" name="autoDefenseSallyPort" value="1" id="adSallyPortReach">
+                            <label for="adSallyPortReach">Reach</label>
+                            <input type="radio" name="autoDefenseSallyPort" value="2" id="adSallyPortMiss">
+                            <label for="adSallyPortMiss">Miss</label>
+                        </fieldset>
                     </fieldset>
                     <fieldset>
                         <legend>D</legend>
-                        <input type="radio" name="bdCatD" value="Rock Wall" id="bdRockWall">
+                        <fieldset>
+                            <legend>Rock Wall</legend>
+                            <input type="radio" name="autoDefenseRockWall" value="0" id="adRockWallMake">
+                            <label for="adRockWallMake">Make</label>
+                            <input type="radio" name="autoDefenseRockWall" value="1" id="adRockWallReach">
+                            <label for="adRockWallReach">Reach</label>
+                            <input type="radio" name="autoDefenseRockWall" value="2" id="adRockWallMiss">
+                            <label for="adRockWallMiss">Miss</label>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Rough Terrain</legend>
+                            <input type="radio" name="autoDefenseRoughTerrain" value="0" id="adRoughTerrainMake">
+                            <label for="adRoughTerrainMake">Make</label>
+                            <input type="radio" name="autoDefenseRoughTerrain" value="1" id="adRoughTerrainReach">
+                            <label for="adRoughTerrainReach">Reach</label>
+                            <input type="radio" name="autoDefenseRoughTerrain" value="2" id="adRoughTerrainMiss">
+                            <label for="adRoughTerrainMiss">Miss</label>
+                        </fieldset>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Low bar</legend>
+                        <input type="checkbox" name="autoDefenseLowbar" value="Make" id="adLowbar">
+                        <label for="adLowbar" class="noPicture">Breached</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Shooting</legend>
+                        <input type="checkbox" name="autoDefenseGrabBall" value="ballGrabbed" id="adGrabBall">
+                        <label for="adGrabBall">Ball grabbed</label>
+                        <div class="highGoals">
+                            <h2>High goals</h2>
+                            <span class="goals makes">0</span>
+                            <br />
+                            <span class="goals misses">0</span>
+                        </div>
+                        <div class="lowGoals">
+                            <h2>Low goals</h2>
+                            <span class="goals makes">0</span>
+                            <br />
+                            <span class="goals misses">0</span>
+                        </div>
+                    </fieldset>
+                </fieldset>
+                <fieldset class="defenses breached">
+                    <legend>Defenses breached (Nonauto)</legend>
+                    <fieldset>
+                        <legend>A</legend>
+                        <input type="radio" name="bdCatA" value="0" id="bdPortcullis">
+                        <label for="bdPortcullis">Portcullis</label>
+                        <input type="radio" name="bdCatA" value="1" id="bdChevalDeFrise">
+                        <label for="bdChevalDeFrise">Cheval de Frise</label>
+                        <br /><span class="bdCatA makes">0</span>
+                        <br /><span class="bdCatA misses">0</span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>B</legend>
+                        <input type="radio" name="bdCatB" value="0" id="bdMoat">
+                        <label for="bdMoat">Moat</label>
+                        <input type="radio" name="bdCatB" value="1" id="bdRamparts">
+                        <label for="bdRamparts">Ramparts</label>
+                        <br /><span class="bdCatB makes">0</span>
+                        <br /><span class="bdCatB misses">0</span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>C</legend>
+                        <input type="radio" name="bdCatC" value="0" id="bdDrawbridge">
+                        <label for="bdDrawbridge">Drawbridge</label>
+                        <input type="radio" name="bdCatC" value="1" id="bdSallyPort">
+                        <label for="bdSallyPort">Sally Port</label>
+                        <br /><span class="bdCatC makes">0</span>
+                        <br /><span class="bdCatC misses">0</span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>D</legend>
+                        <input type="radio" name="bdCatD" value="0" id="bdRockWall">
                         <label for="bdRockWall">Rock Wall</label>
-                        <input type="radio" name="bdCatD" value="Rough Terrain" id="bdRoughTerrain">
+                        <input type="radio" name="bdCatD" value="1" id="bdRoughTerrain">
                         <label for="bdRoughTerrain">Rough Terrain</label>
-                        <br /><span class="bd makes">0</span>
-                        <br /><span class="bd misses">0</span>
-                        <br /><span class="bd successRate">0% success</span>
+                        <br /><span class="bdCatD makes">0</span>
+                        <br /><span class="bdCatD misses">0</span>
                     </fieldset>
                     <fieldset>
                         <legend>Low bar</legend>
@@ -301,7 +305,7 @@
                         <label for="bdLowbar" class="noPicture">Breached</label>
                     </fieldset>
                 </fieldset>
-                <fieldset>
+                <fieldset class="nonAutonomous">
                     <legend>Shooting</legend>
                     <div class="highGoals">
                         <h2>High goals</h2>
@@ -329,8 +333,11 @@
                 </fieldset>
                 <fieldset>
                     <legend>Scaling Endgame</legend>
+                    <input type="checkbox" name="challengedTower" value="successful" id="challengedTower">
+                    <label for="challengedTower">Challenged Tower</label>
+                    <br />
                     <input type="checkbox" name="scalingSuccessful" value="successful" id="scalingSuccessful">
-                    <label for="scalingSuccessful">Successful</label>
+                    <label for="scalingSuccessful">Scaled Successfully</label>
                 </fieldset>
             </div>
             <button id="generateQR">Generate QR Code</button>

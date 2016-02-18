@@ -187,18 +187,24 @@ input:not([type="number"]):checked + label span {
     content: "Misses: ";
 }
 
-#autonomous input[value="Make"] + label {
+#autonomous input[value="0"] + label {
     border-bottom: 2px solid #31ac1d;
-} #autonomous input[value="Reach"] + label {
+} #autonomous input[value="1"] + label {
     border-bottom: 2px solid #c5db15;
-} #autonomous input[value="Miss"] + label {
+} #autonomous input[value="2"] + label {
     border-bottom: 2px solid #d2260f;
+} #autonomous input[value="3"] + label {
+    border-bottom: 2px solid #888;
 }
 
-#autonomous input[value="Make"]:checked + label span {
+#autonomous input[value="0"]:checked + label span {
     background: #31ac1d;
-} #autonomous input[value="Reach"]:checked + label span {
+} #autonomous input[value="1"]:checked + label span {
     background: #c5db15;
-} #autonomous input[value="Miss"]:checked + label span {
+} #autonomous input[value="2"]:checked + label span {
     background: #d2260f;
+} #autonomous input[value="3"]:checked + label span {
+    background: #000;
+}  #autonomous input[value="3"]:checked + label span::after {
+    background: #aaa;
 }
