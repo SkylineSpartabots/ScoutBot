@@ -42,9 +42,9 @@ var app = {
             if($(input).text() < 20) $(input).text( +$(input).text() + 1);
         });
 
-        $("#generateQR").click(function() {
+        $(".generateQR").click(function() {
             var qrResult = $("#qrResult").empty()[0]; // clear the element
-            var data = getGameData();
+            var data = $(this).hasClass("game") ? getGameData() : getPitData(); // set it to either game or pit data
             var qrcode = new QRCode(qrResult, data);
         });
 
@@ -52,7 +52,7 @@ var app = {
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if(!result.cancelled) {
-                        var finalRow = decode(result.text);
+                        var finalRow = decodeGame(result.text);
                         alert(finalRow);
                     } else {
                         alert("Scan cancelled, data not saved");
@@ -181,16 +181,29 @@ var app = {
             return possiblySingleDigit;
         }
 
-        function decode(encodedText) {
+        function decodeGame(encodedText) {
             var values = encodedText.split(" ");
             for(var i = 0; i < values.length; i++) {
                 values[i] = parseInt(values[i], 10);
-                if($.inArray(i, [1,2,11,12,29,35,36,37,38,39,40]) !== -1) {
+                if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
                     values[i] = (values[i]) ? "TRUE" : "FALSE";
+                } else if ($.inArray(i, [3, 17]) !== -1) {
+                    values[i] = (values[i]) ? "Cheval de Frise" : "Porcullis";
+                } else if ($.inArray(i, [4, 20]) !== -1) {
+                    values[i] = (values[i]) ? "Ramparts" : "Moat";
+                } else if ($.inArray(i, [5, 23]) !== -1) {
+                    values[i] = (values[i]) ? "Sally Port" : "Drawbridge";
+                } else if ($.inArray(i, [6, 26]) !== -1) {
+                    values[i] = (values[i]) ? "Rough Terrain" : "Rock Wall";
+                } else if ($.inArray(i, [7, 8, 9, 10]) !== -1) {
+                    if(values[i] === 0) values[i] = "Make";
+                    if(values[i] === 1) values[i] = "Reach";
+                    if(values[i] === 2) values[i] = "Miss";
                 }
             }
 
             var finalRow = values.join(",");
+
             return finalRow;
         }
     }

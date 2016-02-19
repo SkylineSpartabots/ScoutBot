@@ -122,8 +122,10 @@
                     <legend>Shooting</legend>
                     <input type="checkbox" name="psHighGoals" value="true" id="psHighGoals">
                     <label for="psHighGoals">Can shoot high</label>
+                    <br />
                     <input type="checkbox" name="psLowGoals" value="true" id="psLowGoals">
                     <label for="psLowGoals">Can shoot low</label>
+                    <br />
                     <input type="checkbox" name="psGrabBall" value="true" id="psGrabBall">
                     <label for="psGrabBall">Can grab ball</label>
                 </fieldset>
@@ -131,10 +133,13 @@
                     <legend>Roles</legend>
                     <input type="checkbox" name="psRole" value="highShooting" id="psHighShootingSpecialty">
                     <label for="psHighShootingSpecialty">High shooting</label>
+                    <br />
                     <input type="checkbox" name="psRole" value="lowShooting" id="psLowShootingSpecialty">
                     <label for="psLowShootingSpecialty">Low shooting</label>
+                    <br />
                     <input type="checkbox" name="psRole" value="breaching" id="psBreachingSpecialty">
                     <label for="psBreachingSpecialty">Breaching</label>
+                    <br />
                     <input type="checkbox" name="psRole" value="defending" id="psDefendingSpecialty">
                     <label for="psDefendingSpecialty">Defending</label>
                 </fieldset>
@@ -315,10 +320,13 @@
                     <legend>Roles</legend>
                     <input type="checkbox" name="gameRole" value="highShooting" id="gameHighShootingSpecialty">
                     <label for="gameHighShootingSpecialty">High shooting</label>
+                    <br />
                     <input type="checkbox" name="gameRole" value="lowShooting" id="gameLowShootingSpecialty">
                     <label for="gameLowShootingSpecialty">Low shooting</label>
+                    <br />
                     <input type="checkbox" name="gameRole" value="breaching" id="gameBreachingSpecialty">
                     <label for="gameBreachingSpecialty">Breaching</label>
+                    <br />
                     <input type="checkbox" name="gameRole" value="defending" id="gameDefendingSpecialty">
                     <label for="gameDefendingSpecialty">Defending</label>
                 </fieldset>
@@ -331,7 +339,8 @@
                     <label for="scalingSuccessful">Scaled Successfully</label>
                 </fieldset>
             </div>
-            <button id="generateQR">Generate QR Code</button>
+            <button class="game generateQR">Generate QR Code (game)</button>
+            <button class="pit generateQR">Generate QR Code (pit)</button>
             <button id="takePicture">Take Picture</button>
             <button id="decodeQR">Scan QR Code</button>
             <div id="qrResult"></div>

@@ -57,9 +57,21 @@ h1 {
     color: #eee;
 }
 
-.pitTabActive .view:not(.pit), .pitTabActive h1:not(.pit), .pitTabActive #decodeQR,
-.gameTabActive .view:not(.game), .gameTabActive h1:not(.game), .gameTabActive #decodeQR,
-.decodeTabActive .view:not(.decode), .decodeTabActive h1:not(.decode), .decodeTabActive #generateQR, .decodeTabActive #takePicture, .decodeTabActive #qrResult {
+.pitTabActive .view:not(.pit),
+.pitTabActive h1:not(.pit),
+.pitTabActive .game.generateQR,
+.pitTabActive #decodeQR,
+
+.gameTabActive .view:not(.game),
+.gameTabActive h1:not(.game),
+.gameTabActive .pit.generateQR,
+.gameTabActive #decodeQR,
+
+.decodeTabActive .view:not(.decode),
+.decodeTabActive h1:not(.decode),
+.decodeTabActive .generateQR,
+.decodeTabActive #takePicture,
+.decodeTabActive #qrResult {
     display: none;
 }
 
@@ -75,6 +87,7 @@ legend {
 .defenses label img,
 #autonomous legend span img {
     display: none;
+    width: 100vw;
     z-index: 10; /* should always be top */
 }
 
