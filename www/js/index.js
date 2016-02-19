@@ -43,9 +43,10 @@ var app = {
         });
 
         $(".generateQR").click(function() {
-            var qrResult = $("#qrResult").empty()[0]; // clear the element
+            $("#qrResult").empty();
             var data = $(this).hasClass("game") ? getGameData() : getPitData(); // set it to either game or pit data
-            var qrcode = new QRCode(qrResult, data);
+            var canvas = qr.canvas(data);
+            $("#qrResult").append(canvas);
         });
 
         $("#decodeQR").click(function() {
@@ -155,7 +156,9 @@ var app = {
             var challengedTower = isChecked("challengedTower");
             var scalingSuccessful = isChecked("scalingSuccessful");
 
-            var encodedText = teamNumber + " " + fouled  + " " + deadBot + " " + cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a + " " + ad.b + " " + ad.c + " " + ad.d + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses  + " " + timesBallPickedUp + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + challengedTower + " " + scalingSuccessful;
+            // var encodedText = teamNumber + " " + fouled  + " " + deadBot + " " + cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a + " " + ad.b + " " + ad.c + " " + ad.d + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses  + " " + timesBallPickedUp + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + challengedTower + " " + scalingSuccessful;
+
+            var encodedText = teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + challengedTower + scalingSuccessful;
 
             return encodedText;
         }
@@ -182,13 +185,14 @@ var app = {
         }
 
         function decodeGame(encodedText) {
-            var values = encodedText.split(" ");
+            // var values = encodedText.split(" ");
+            var values = toArray(encodedText);
             for(var i = 0; i < values.length; i++) {
                 values[i] = parseInt(values[i], 10);
                 if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
                     values[i] = (values[i]) ? "TRUE" : "FALSE";
                 } else if ($.inArray(i, [3, 17]) !== -1) {
-                    values[i] = (values[i]) ? "Cheval de Frise" : "Porcullis";
+                    values[i] = (values[i]) ? "Cheval de Frise" : "Portcullis";
                 } else if ($.inArray(i, [4, 20]) !== -1) {
                     values[i] = (values[i]) ? "Ramparts" : "Moat";
                 } else if ($.inArray(i, [5, 23]) !== -1) {
@@ -205,6 +209,61 @@ var app = {
             var finalRow = values.join(",");
 
             return finalRow;
+        }
+
+        function toGameArray(encodedText) {
+            // encodedText = "1345101010121210110406031060810107104060030500709060909100110";
+            var values = [
+                encodedText.substr(0,4),//Team #
+                encodedText.substr(4,1),//Single Digit
+                encodedText.substr(5,1),
+                encodedText.substr(6,1),
+                encodedText.substr(7,1),
+                encodedText.substr(8,1),
+                encodedText.substr(9,1),
+                encodedText.substr(10,1),
+                encodedText.substr(11,1),
+                encodedText.substr(12,1),
+                encodedText.substr(13,1),
+                encodedText.substr(14,1),
+                encodedText.substr(15,1),
+
+                encodedText.substr(16,2),//Goal Counts
+                encodedText.substr(18,2),
+                encodedText.substr(20,2),
+                encodedText.substr(22,2),
+
+                encodedText.substr(24,1),
+                encodedText.substr(25,2),
+                encodedText.substr(27,2),
+                encodedText.substr(29,1),
+
+                // 1345 1 0 1 0 1 0 1 2 1 2 1 0 11 04 06 03 1 06 08 1 #01 07 1 04 06 0 03 05 0 07 09 06 09 09 1 0 0 1 1 0
+                encodedText.substr(30,2),
+                encodedText.substr(32,2),
+                encodedText.substr(34,1),
+                encodedText.substr(35,2),
+                encodedText.substr(37,2),
+                encodedText.substr(39,1),
+                encodedText.substr(40,2),
+                encodedText.substr(42,2),
+                encodedText.substr(44,1),
+
+                encodedText.substr(45,2),
+                encodedText.substr(47,2),
+                encodedText.substr(49,2),
+                encodedText.substr(51,2),
+                encodedText.substr(53,2),
+
+                encodedText.substr(55,1),
+                encodedText.substr(56,1),
+                encodedText.substr(57,1),
+                encodedText.substr(58,1),
+                encodedText.substr(59,1),
+                encodedText.substr(60,1)
+            ];
+
+            return values;
         }
     }
 };
