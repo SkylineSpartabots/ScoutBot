@@ -107,6 +107,9 @@ legend {
 #qrResult img {
     margin-right: auto;
     margin-left: auto;
+    width: 80vw;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 button {

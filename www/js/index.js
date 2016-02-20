@@ -4,12 +4,36 @@ var app = {
         $(document).on("deviceready", this.onDeviceReady);
     },
     onDeviceReady: function() {
+
+        var fileObj;
+
         // start doing stuff
         $("#tabsContainer div").click(function() {
             $("#app").attr("class", $(this).attr("id") + "Active");
         });
 
+        window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
+            // alert("got main dir" + dir);
+            dir.getFile("scoutingData.txt", {create:true}, function(file) {
+                // alert("got the file" + file);
+                fileObj = file;
+            });
+        });
+
+        function writeToFile(str) {
+            str += "\n";
+            fileObj.createWriter(function(fileWriter) {
+                fileWriter.seek(fileWriter.length);
+                var blob = new Blob([str], {type:'text/plain'});
+                fileWriter.write(blob);
+            });
+        }
+
         $("label").prepend("<span></span>");
+
+        $("#pitTeamNumber, #gameTeamNumber").change(function() {
+            $(this).val($(this).val().substr(0, 4));
+        });
 
         var defenseLabels = $(".defenses label:not(.noPicture), #autonomous legend span");
         for(var i = 0; i < defenseLabels.length; i++) {
@@ -45,8 +69,7 @@ var app = {
         $(".generateQR").click(function() {
             $("#qrResult").empty();
             var data = $(this).hasClass("game") ? getGameData() : getPitData(); // set it to either game or pit data
-            var canvas = qr.canvas(data);
-            $("#qrResult").append(canvas);
+            $("#qrResult").append("<img src='" + qr.toDataURL(data) + "' />");
         });
 
         $("#decodeQR").click(function() {
@@ -55,6 +78,7 @@ var app = {
                     if(!result.cancelled) {
                         var finalRow = decodeGame(result.text);
                         alert(finalRow);
+                        writeToFile(finalRow);
                     } else {
                         alert("Scan cancelled, data not saved");
                     }
