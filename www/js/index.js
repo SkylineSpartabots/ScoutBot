@@ -183,12 +183,13 @@ var app = {
                 defending : isChecked("gameDefendingSpecialty")
             };
 
+            var towerNotWeakened = isChecked("towerNotWeakened");
             var challengedTower = isChecked("challengedTower");
             var scalingSuccessful = isChecked("scalingSuccessful");
 
-            // var encodedText = teamNumber + " " + fouled  + " " + deadBot + " " + cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a + " " + ad.b + " " + ad.c + " " + ad.d + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses  + " " + timesBallPickedUp + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + challengedTower + " " + scalingSuccessful;
+            // var encodedText = teamNumber + " " + fouled  + " " + deadBot + " " + cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a + " " + ad.b + " " + ad.c + " " + ad.d + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses  + " " + timesBallPickedUp + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + towerNotWeakened + " " + challengedTower + " " + scalingSuccessful;
 
-            var encodedText = teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + challengedTower + scalingSuccessful;
+            var encodedText = teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + towerNotWeakened + challengedTower + scalingSuccessful;
 
             return encodedText;
         }
@@ -309,7 +310,8 @@ var app = {
                 encodedText.substr(57,1),
                 encodedText.substr(58,1),
                 encodedText.substr(59,1),
-                encodedText.substr(60,1)
+                encodedText.substr(60,1),
+                encodedText.substr(61,1)
             ];
 
             return values;
