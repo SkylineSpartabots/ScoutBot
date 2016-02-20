@@ -35,6 +35,12 @@ var app = {
             $(this).val($(this).val().substr(0, 4));
         });
 
+        $("#playedAgainstUs ~ fieldset input").prop("disabled", true);
+        $("#playedAgainstUs").change(function() {
+            $("#playedAgainstUs ~ fieldset input").prop("checked", false);
+            $("#playedAgainstUs ~ fieldset input").prop("disabled", !$("#playedAgainstUs ~ fieldset input").prop("disabled"));
+        });
+
         var defenseLabels = $(".defenses label:not(.noPicture), #autonomous legend span");
         for(var i = 0; i < defenseLabels.length; i++) {
             var imageUrl = "img/" + $(defenseLabels[i]).text().replace(/ /g,"_").toLowerCase() + ".png";
@@ -191,8 +197,11 @@ var app = {
             if($('input[name="' + groupName + '"]:checked').length) {
                 return $('input[name="' + groupName + '"]:checked')[0].value;
             } else {
-                alert("Field " + groupName + " not filled out.");
-                return "X";
+                if(groupName.indexOf("cdCat") === -1) {
+                    alert("Field " + groupName + " not filled out.");
+                    return "X";
+                }
+                return "9";
             }
         }
 
@@ -216,13 +225,29 @@ var app = {
                 if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
                     values[i] = (values[i]) ? "TRUE" : "FALSE";
                 } else if ($.inArray(i, [3, 17]) !== -1) {
-                    values[i] = (values[i]) ? "Cheval de Frise" : "Portcullis";
+                    if(values[i] === 9) {
+                        values[i] = "X";
+                    } else {
+                        values[i] = (values[i]) ? "Cheval de Frise" : "Portcullis";
+                    }
                 } else if ($.inArray(i, [4, 20]) !== -1) {
-                    values[i] = (values[i]) ? "Ramparts" : "Moat";
+                    if(values[i] === 9) {
+                        values[i] = "X";
+                    } else {
+                        values[i] = (values[i]) ? "Ramparts" : "Moat";
+                    }
                 } else if ($.inArray(i, [5, 23]) !== -1) {
-                    values[i] = (values[i]) ? "Sally Port" : "Drawbridge";
+                    if(values[i] === 9) {
+                        values[i] = "X";
+                    } else {
+                        values[i] = (values[i]) ? "Sally Port" : "Drawbridge";
+                    }
                 } else if ($.inArray(i, [6, 26]) !== -1) {
-                    values[i] = (values[i]) ? "Rough Terrain" : "Rock Wall";
+                    if(values[i] === 9) {
+                        values[i] = "X";
+                    } else {
+                        values[i] = (values[i]) ? "Rough Terrain" : "Rock Wall";
+                    }
                 } else if ($.inArray(i, [7, 8, 9, 10]) !== -1) {
                     if(values[i] === 0) values[i] = "Make";
                     if(values[i] === 1) values[i] = "Reach";

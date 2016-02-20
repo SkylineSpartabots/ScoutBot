@@ -84,6 +84,13 @@ legend {
     padding: 5px;
 }
 
+#playedAgainstUs:not(:checked) ~ fieldset label {
+    color: #777;
+}
+#playedAgainstUs:not(:checked) ~ fieldset span {
+    background: #aaa;
+}
+
 .defenses label img,
 #autonomous legend span img {
     display: none;
