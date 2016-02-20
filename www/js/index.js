@@ -210,7 +210,7 @@ var app = {
 
         function decodeGame(encodedText) {
             // var values = encodedText.split(" ");
-            var values = toArray(encodedText);
+            var values = toGameArray(encodedText);
             for(var i = 0; i < values.length; i++) {
                 values[i] = parseInt(values[i], 10);
                 if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
