@@ -29,7 +29,7 @@ var app = {
             });
         }
 
-        $("label").prepend("<span></span>");
+        $('input[type="checkbox"]').addClass("filled-in"); // for Materialize
 
         $("#pitTeamNumber, #gameTeamNumber").change(function() {
             $(this).val($(this).val().substr(0, 4));
@@ -60,7 +60,7 @@ var app = {
         });
 
         var breachedDefenses = $(".game.view .defenses.breached");
-        var buttonHTML = "<button class='minus'></button><button class='plus'></button>";
+        var buttonHTML = "<button class='btn waves-effect red waves-light minus'></button><button class='btn waves-effect green waves-light plus'></button>";
         breachedDefenses.children("fieldset").children("span.makes, span.misses").after(buttonHTML);
         $("span.goals.makes, span.goals.misses, span.counter").after(buttonHTML);
         $("button.minus").click(function() {
