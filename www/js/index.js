@@ -7,11 +7,6 @@ var app = {
 
         var fileObj;
 
-        // start doing stuff
-        $("#tabsContainer div").click(function() {
-            $("#app").attr("class", $(this).attr("id") + "Active");
-        });
-
         window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
             // alert("got main dir" + dir);
             dir.getFile("scoutingData.txt", {create:true}, function(file) {
@@ -29,48 +24,11 @@ var app = {
             });
         }
 
-        $('input[type="checkbox"]').addClass("filled-in"); // for Materialize
-
-        $("#pitTeamNumber, #gameTeamNumber").change(function() {
-            $(this).val($(this).val().substr(0, 4));
-        });
-
-        $("#playedAgainstUs ~ fieldset input").prop("disabled", true);
-        $("#playedAgainstUs").change(function() {
-            $("#playedAgainstUs ~ fieldset input").prop("checked", false);
-            $("#playedAgainstUs ~ fieldset input").prop("disabled", !$("#playedAgainstUs ~ fieldset input").prop("disabled"));
-        });
-
-        var defenseLabels = $(".defenses label:not(.noPicture), #autonomous legend span");
-        for(var i = 0; i < defenseLabels.length; i++) {
-            var imageUrl = "img/" + $(defenseLabels[i]).text().replace(/ /g,"_").toLowerCase() + ".png";
-            var image = $("<img src='" + imageUrl + "'>");
-            $(defenseLabels[i]).append(image);
-        }
-
-        defenseLabels.on("taphold", {
-            duration: 1000
-        }, function() {
-            $(this).children("img").addClass("visible");
-            return false;
-        });
-        defenseLabels.children("img").click(function() {
-            $(this).removeClass("visible");
-            return false;
-        });
-
-        var breachedDefenses = $(".game.view .defenses.breached");
-        var buttonHTML = "<button class='btn waves-effect red waves-light minus'></button><button class='btn waves-effect green waves-light plus'></button>";
-        breachedDefenses.children("fieldset").children("span.makes, span.misses").after(buttonHTML);
-        $("span.goals.makes, span.goals.misses, span.counter").after(buttonHTML);
-        $("button.minus").click(function() {
-            var input = $(this).prevAll("span")[0];
-            if($(input).text() > 0) $(input).text( +$(input).text() - 1);
-        });
-        $("button.plus").click(function() {
-            var input = $(this).prevAll("span")[0];
-            if($(input).text() < 20) $(input).text( +$(input).text() + 1);
-        });
+        bindTabs();
+        customizeMaterial();
+        addRestrictions();
+        addDefenseTooltips();
+        addPlusMinusButtons();
 
         $(".generateQR").click(function() {
             $("#qrResult").empty();
@@ -218,105 +176,161 @@ var app = {
             return possiblySingleDigit;
         }
 
-        function decodeGame(encodedText) {
-            // var values = encodedText.split(" ");
-            var values = toGameArray(encodedText);
-            for(var i = 0; i < values.length; i++) {
-                values[i] = parseInt(values[i], 10);
-                if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
-                    values[i] = (values[i]) ? "TRUE" : "FALSE";
-                } else if ($.inArray(i, [3, 17]) !== -1) {
-                    if(values[i] === 9) {
-                        values[i] = "X";
-                    } else {
-                        values[i] = (values[i]) ? "Cheval de Frise" : "Portcullis";
-                    }
-                } else if ($.inArray(i, [4, 20]) !== -1) {
-                    if(values[i] === 9) {
-                        values[i] = "X";
-                    } else {
-                        values[i] = (values[i]) ? "Ramparts" : "Moat";
-                    }
-                } else if ($.inArray(i, [5, 23]) !== -1) {
-                    if(values[i] === 9) {
-                        values[i] = "X";
-                    } else {
-                        values[i] = (values[i]) ? "Sally Port" : "Drawbridge";
-                    }
-                } else if ($.inArray(i, [6, 26]) !== -1) {
-                    if(values[i] === 9) {
-                        values[i] = "X";
-                    } else {
-                        values[i] = (values[i]) ? "Rough Terrain" : "Rock Wall";
-                    }
-                } else if ($.inArray(i, [7, 8, 9, 10]) !== -1) {
-                    if(values[i] === 0) values[i] = "Make";
-                    if(values[i] === 1) values[i] = "Reach";
-                    if(values[i] === 2) values[i] = "Miss";
-                }
-            }
-
-            var finalRow = values.join(",");
-
-            return finalRow;
-        }
-
-        function toGameArray(encodedText) {
-            // encodedText = "1345101010121210110406031060810107104060030500709060909100110";
-            var values = [
-                encodedText.substr(0,4),//Team #
-                encodedText.substr(4,1),//Single Digit
-                encodedText.substr(5,1),
-                encodedText.substr(6,1),
-                encodedText.substr(7,1),
-                encodedText.substr(8,1),
-                encodedText.substr(9,1),
-                encodedText.substr(10,1),
-                encodedText.substr(11,1),
-                encodedText.substr(12,1),
-                encodedText.substr(13,1),
-                encodedText.substr(14,1),
-                encodedText.substr(15,1),
-
-                encodedText.substr(16,2),//Goal Counts
-                encodedText.substr(18,2),
-                encodedText.substr(20,2),
-                encodedText.substr(22,2),
-
-                encodedText.substr(24,1),
-                encodedText.substr(25,2),
-                encodedText.substr(27,2),
-                encodedText.substr(29,1),
-
-                // 1345 1 0 1 0 1 0 1 2 1 2 1 0 11 04 06 03 1 06 08 1 #01 07 1 04 06 0 03 05 0 07 09 06 09 09 1 0 0 1 1 0
-                encodedText.substr(30,2),
-                encodedText.substr(32,2),
-                encodedText.substr(34,1),
-                encodedText.substr(35,2),
-                encodedText.substr(37,2),
-                encodedText.substr(39,1),
-                encodedText.substr(40,2),
-                encodedText.substr(42,2),
-                encodedText.substr(44,1),
-
-                encodedText.substr(45,2),
-                encodedText.substr(47,2),
-                encodedText.substr(49,2),
-                encodedText.substr(51,2),
-                encodedText.substr(53,2),
-
-                encodedText.substr(55,1),
-                encodedText.substr(56,1),
-                encodedText.substr(57,1),
-                encodedText.substr(58,1),
-                encodedText.substr(59,1),
-                encodedText.substr(60,1),
-                encodedText.substr(61,1)
-            ];
-
-            return values;
-        }
     }
 };
+
+function toGameArray(encodedText) {
+    var values = [
+        encodedText.substr(0,4), // Team #
+        encodedText.substr(4,1), // Single Digit
+        encodedText.substr(5,1),
+        encodedText.substr(6,1),
+        encodedText.substr(7,1),
+        encodedText.substr(8,1),
+        encodedText.substr(9,1),
+        encodedText.substr(10,1),
+        encodedText.substr(11,1),
+        encodedText.substr(12,1),
+        encodedText.substr(13,1),
+        encodedText.substr(14,1),
+        encodedText.substr(15,1),
+
+        encodedText.substr(16,2), // Goal Counts
+        encodedText.substr(18,2),
+        encodedText.substr(20,2),
+        encodedText.substr(22,2),
+
+        encodedText.substr(24,1),
+        encodedText.substr(25,2),
+        encodedText.substr(27,2),
+        encodedText.substr(29,1),
+
+        encodedText.substr(30,2),
+        encodedText.substr(32,2),
+        encodedText.substr(34,1),
+        encodedText.substr(35,2),
+        encodedText.substr(37,2),
+        encodedText.substr(39,1),
+        encodedText.substr(40,2),
+        encodedText.substr(42,2),
+        encodedText.substr(44,1),
+
+        encodedText.substr(45,2),
+        encodedText.substr(47,2),
+        encodedText.substr(49,2),
+        encodedText.substr(51,2),
+        encodedText.substr(53,2),
+
+        encodedText.substr(55,1),
+        encodedText.substr(56,1),
+        encodedText.substr(57,1),
+        encodedText.substr(58,1),
+        encodedText.substr(59,1),
+        encodedText.substr(60,1),
+        encodedText.substr(61,1)
+    ];
+
+    return values;
+}
+
+function decodeGame(encodedText) {
+    // var values = encodedText.split(" ");
+    var values = toGameArray(encodedText);
+    for(var i = 0; i < values.length; i++) {
+        values[i] = parseInt(values[i], 10);
+        if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
+            values[i] = (values[i]) ? "TRUE" : "FALSE";
+        } else if ($.inArray(i, [3, 17]) !== -1) {
+            if(values[i] === 9) {
+                values[i] = "X";
+            } else {
+                values[i] = (values[i]) ? "Cheval de Frise" : "Portcullis";
+            }
+        } else if ($.inArray(i, [4, 20]) !== -1) {
+            if(values[i] === 9) {
+                values[i] = "X";
+            } else {
+                values[i] = (values[i]) ? "Ramparts" : "Moat";
+            }
+        } else if ($.inArray(i, [5, 23]) !== -1) {
+            if(values[i] === 9) {
+                values[i] = "X";
+            } else {
+                values[i] = (values[i]) ? "Sally Port" : "Drawbridge";
+            }
+        } else if ($.inArray(i, [6, 26]) !== -1) {
+            if(values[i] === 9) {
+                values[i] = "X";
+            } else {
+                values[i] = (values[i]) ? "Rough Terrain" : "Rock Wall";
+            }
+        } else if ($.inArray(i, [7, 8, 9, 10]) !== -1) {
+            if(values[i] === 0) values[i] = "Make";
+            if(values[i] === 1) values[i] = "Reach";
+            if(values[i] === 2) values[i] = "Miss";
+        }
+    }
+
+    var finalRow = values.join(",");
+
+    return finalRow;
+}
+
+function bindTabs() {
+    $("#tabsContainer div").click(function() {
+        $("#app").attr("class", $(this).attr("id") + "Active");
+    });
+}
+
+function customizeMaterial() {
+    $('input[type="checkbox"]').addClass("filled-in");
+}
+
+function addRestrictions() {
+    $("#pitTeamNumber, #gameTeamNumber").change(function() {
+        $(this).val($(this).val().substr(0, 4));
+    });
+
+    $("#playedAgainstUs ~ fieldset input").prop("disabled", true);
+    $("#playedAgainstUs").change(function() {
+        $("#playedAgainstUs ~ fieldset input").prop("checked", false);
+        $("#playedAgainstUs ~ fieldset input").prop("disabled", !$("#playedAgainstUs ~ fieldset input").prop("disabled"));
+    });
+}
+
+function addDefenseTooltips() {
+    var defenseLabels = $(".defenses label:not(.noPicture), #autonomous legend span");
+    for(var i = 0; i < defenseLabels.length; i++) {
+        var imageUrl = "img/" + $(defenseLabels[i]).text().replace(/ /g,"_").toLowerCase() + ".png";
+        var image = $("<img src='" + imageUrl + "'>");
+        $(defenseLabels[i]).append(image);
+    }
+
+    defenseLabels.on("taphold", {
+        duration: 1000
+    }, function() {
+        $(this).children("img").addClass("visible");
+        return false;
+    });
+    defenseLabels.children("img").click(function() {
+        $(this).removeClass("visible");
+        return false;
+    });
+}
+
+function addPlusMinusButtons() {
+    var breachedDefenses = $(".game.view .defenses.breached");
+    var buttonHTML = "<button class='btn waves-effect red waves-light minus'></button><button class='btn waves-effect green waves-light plus'></button>";
+    breachedDefenses.children("fieldset").children("span.makes, span.misses").after(buttonHTML);
+    $("span.goals.makes, span.goals.misses, span.counter").after(buttonHTML);
+    $("button.minus").click(function() {
+        var input = $(this).prevAll("span")[0];
+        if($(input).text() > 0) $(input).text( +$(input).text() - 1);
+    });
+    $("button.plus").click(function() {
+        var input = $(this).prevAll("span")[0];
+        if($(input).text() < 20) $(input).text( +$(input).text() + 1);
+    });
+}
 
 app.initialize();
