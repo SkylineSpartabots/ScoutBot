@@ -1,34 +1,38 @@
 var app = {
-    // Application Constructor
     initialize: function() {
         $(document).on("deviceready", this.onDeviceReady);
     },
     onDeviceReady: function() {
-
-        var fileObj;
-
-        window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
-            // alert("got main dir" + dir);
-            dir.getFile("scoutingData.txt", {create:true}, function(file) {
-                // alert("got the file" + file);
-                fileObj = file;
-            });
-        });
-
-        function writeToFile(str) {
-            str += "\n";
-            fileObj.createWriter(function(fileWriter) {
-                fileWriter.seek(fileWriter.length);
-                var blob = new Blob([str], {type:'text/plain'});
-                fileWriter.write(blob);
-            });
-        }
 
         bindTabs();
         customizeMaterial();
         addRestrictions();
         addDefenseTooltips();
         addPlusMinusButtons();
+
+        var pitFile;
+        var gameFile;
+
+        window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
+            dir.getFile("pitData.txt", {create:true}, function(file) {
+                pitFile = file;
+            });
+        });
+        window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
+            dir.getFile("gameData.txt", {create:true}, function(file) {
+                gameFile = file;
+            });
+        });
+
+        function writeToFile(fileName, str) { // fileName is either "pit" or "game"
+            str += "\n";
+            var file = (fileName === "game") ? gameFile : pitFile;
+            file.createWriter(function(fileWriter) {
+                fileWriter.seek(fileWriter.length);
+                var blob = new Blob([str], {type:'text/plain'});
+                fileWriter.write(blob);
+            });
+        }
 
         $(".generateQR").click(function() {
             $("#qrResult").empty();
@@ -40,9 +44,19 @@ var app = {
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if(!result.cancelled) {
-                        var finalRow = decodeGame(result.text);
-                        alert(finalRow);
-                        writeToFile(finalRow);
+                        alert(result.text);
+                        var encodedText = result.text.substr(1, result.text.length);
+                        alert(result.text.charAt(0));
+                        alert(result.text.charAt(0) === "G");
+                        if(result.text.charAt(0) === "G") {
+                            var finalGameRow = decodeGame(encodedText);
+                            alert(finalGameRow);
+                            writeToFile("game", finalGameRow);
+                        } else {
+                            var finalPitRow = decodePit(encodedText);
+                            alert(finalPitRow);
+                            writeToFile("pit", finalPitRow);
+                        }
                     } else {
                         alert("Scan cancelled, data not saved");
                     }
@@ -58,7 +72,48 @@ var app = {
             while(teamNumber.length < 4) {
                 teamNumber = "0" + teamNumber;
             }
-            return teamNumber;
+            var auto = {
+                portcullis: isChecked("psAPortcullis"),
+                chevalDeFrise: isChecked("psAChevalDeFrise"),
+                moat: isChecked("psAMoat"),
+                ramparts: isChecked("psARamparts"),
+                drawbridge: isChecked("psADrawbridge"),
+                sallyPort: isChecked("psASallyPort"),
+                rockWall: isChecked("psARockWall"),
+                roughTerrain: isChecked("psARoughTerrain"),
+                lowbar: isChecked("psALowbar"),
+                reachDefense: isChecked("psAReachDefense"),
+                grabBall: isChecked("psAGrabBall")
+            };
+
+            var defenses = {
+                portcullis: isChecked("psPortcullis"),
+                chevalDeFrise: isChecked("psChevalDeFrise"),
+                moat: isChecked("psMoat"),
+                ramparts: isChecked("psRamparts"),
+                drawbridge: isChecked("psDrawbridge"),
+                sallyPort: isChecked("psSallyPort"),
+                rockWall: isChecked("psRockWall"),
+                roughTerrain: isChecked("psRoughTerrain"),
+                lowbar: isChecked("psLowbar")
+            };
+
+            var shooting = {
+                high: isChecked("psHighGoals"),
+                low: isChecked("psLowGoals"),
+                grabBall: isChecked("psGrabBall")
+            };
+
+            var roles = {
+                highShooting : isChecked("psHighShootingSpecialty"),
+                lowShooting : isChecked("psLowShootingSpecialty"),
+                breaching : isChecked("psBreachingSpecialty"),
+                defending : isChecked("psDefendingSpecialty")
+            };
+
+            var encodedText = "P" + teamNumber + " " + auto.portcullis + " " + auto.chevalDeFrise + " " + auto.moat + " " + auto.ramparts + " " + auto.drawbridge + " " + auto.sallyPort + " " + auto.rockWall + " " + auto.roughTerrain + " " + auto.lowbar + " " + auto.reachDefense + " " + auto.grabBall + " " + defenses.portcullis + " " + defenses.chevalDeFrise + " " + defenses.moat + " " + defenses.ramparts + " " + defenses.drawbridge + " " + defenses.sallyPort + " " + defenses.rockWall + " " + defenses.roughTerrain + " " + defenses.lowbar + " " + shooting.high + " " + shooting.low + " " + shooting.grabBall + " " + roles.highShooting + " " + roles.lowShooting + " " + roles.breaching + " " + roles.defending;
+
+            return encodedText;
         }
 
         function getGameData() {
@@ -145,9 +200,7 @@ var app = {
             var challengedTower = isChecked("challengedTower");
             var scalingSuccessful = isChecked("scalingSuccessful");
 
-            // var encodedText = teamNumber + " " + fouled  + " " + deadBot + " " + cd.a + " " + cd.b + " " + cd.c + " " + cd.d + " " + ad.a + " " + ad.b + " " + ad.c + " " + ad.d + " " + ad.lowbar + " " + ad.grabBall + " " + aGoals.high.makes + " " + aGoals.high.misses + " " + aGoals.low.makes + " " + aGoals.low.misses + " " + bd.a.defense + " " + bd.a.makes + " " + bd.a.misses + " " + bd.b.defense + " " + bd.b.makes + " " + bd.b.misses + " " + bd.c.defense + " " + bd.c.makes + " " + bd.c.misses + " " + bd.d.defense + " " + bd.d.makes + " " + bd.d.misses + " " + bd.lowbar + " " + goals.high.makes + " " + goals.high.misses + " " + goals.low.makes + " " + goals.low.misses  + " " + timesBallPickedUp + " " + gameRoles.highShooting + " " + gameRoles.lowShooting + " " + gameRoles.breaching + " " + gameRoles.defending + " " + towerNotWeakened + " " + challengedTower + " " + scalingSuccessful;
-
-            var encodedText = teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + towerNotWeakened + challengedTower + scalingSuccessful;
+            var encodedText = "G" + teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + towerNotWeakened + challengedTower + scalingSuccessful;
 
             return encodedText;
         }
@@ -178,6 +231,17 @@ var app = {
 
     }
 };
+
+function decodePit() {
+    var values = encodedText.split(" ");
+    values[0] = parseInt(values[0], 10);
+    for(var i = 1; i < values.length; i++) {
+        values[i] = (values[i] === "1") ? "TRUE" : "FALSE";
+    }
+
+    var finalRow = values.join(",");
+    return finalRow;
+}
 
 function toGameArray(encodedText) {
     var values = [
@@ -234,7 +298,6 @@ function toGameArray(encodedText) {
 }
 
 function decodeGame(encodedText) {
-    // var values = encodedText.split(" ");
     var values = toGameArray(encodedText);
     for(var i = 0; i < values.length; i++) {
         values[i] = parseInt(values[i], 10);
@@ -333,4 +396,7 @@ function addPlusMinusButtons() {
     });
 }
 
+function getRandom() { // returns a 5 digit random number
+    return Math.floor(Math.random()*89999+10000);
+}
 app.initialize();

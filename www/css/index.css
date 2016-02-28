@@ -2,7 +2,6 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
     outline: none;
     border: 0;
-    : transparent;
     color: #222;
 }
 
@@ -28,7 +27,7 @@ input {
     align-items: stretch;
     flex-flow: row wrap;
     width: 100%;
-    background: rgba(30,30,30,0.4);
+    background: #fff;
 }
 
 #tabsContainer div {
@@ -37,14 +36,15 @@ input {
     text-align: center;
     padding: 10px;
     font-size: 1.08em;
-    color: #111; /* unselected tab color */
+    color: #777; /* unselected tab color */
 }
 
 .pitTabActive #pitTab, /* selected tab */
 .gameTabActive #gameTab,
 .decodeTabActive #decodeTab {
-    background: #43A047;
-    color: #eee;
+    /*background: #43A047;*/
+    color: #000;
+    border-bottom: 5px solid #000;
 }
 
 .pitTabActive .view:not(.pit),
