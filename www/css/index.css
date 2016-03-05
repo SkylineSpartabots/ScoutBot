@@ -22,6 +22,13 @@ input {
     font-size: 25px;
 }
 
+h1 {
+    font-size: 1.6em;
+}
+h2 {
+    font-size: 1.3em;
+}
+
 #tabsContainer {
     display: flex;
     align-items: stretch;
@@ -51,11 +58,13 @@ input {
 .pitTabActive h1:not(.pit),
 .pitTabActive .game.generateQR,
 .pitTabActive #decodeQR,
+.pitTabActive #data,
 
 .gameTabActive .view:not(.game),
 .gameTabActive h1:not(.game),
 .gameTabActive .pit.generateQR,
 .gameTabActive #decodeQR,
+.gameTabActive #data,
 
 .decodeTabActive .view:not(.decode),
 .decodeTabActive h1:not(.decode),
@@ -70,6 +79,10 @@ legend {
 }
 
 label {
+    color: #333;
+}
+
+input:checked + label {
     color: #000;
 }
 
@@ -103,7 +116,8 @@ label {
 
 button.minus,
 button.plus {
-    padding: 5px 10px;
+    padding: 10px 30px;
+    padding-bottom: 40px;
     background: #ddd;
 }
 

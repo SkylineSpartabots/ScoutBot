@@ -1,14 +1,27 @@
+var permanentStorage = window.localStorage;
+var allGameData = "";
+var allRandomKeys = [];
 var app = {
     initialize: function() {
         $(document).on("deviceready", this.onDeviceReady);
     },
     onDeviceReady: function() {
-
         bindTabs();
         customizeMaterial();
         addRestrictions();
         addDefenseTooltips();
         addPlusMinusButtons();
+
+        if(permanentStorage.getItem("csvData")) {
+            var rows = permanentStorage.getItem("csvData").split("|");
+            for(var i = 0; i < rows.length; i++) {
+                addRow(rows[i]);
+            }
+        }
+
+        if(permanentStorage.getItem("randomKeys")) {
+            allRandomKeys = permanentStorage.getItem("randomKeys").split("|");
+        }
 
         var pitFile;
         var gameFile;
@@ -44,18 +57,21 @@ var app = {
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if(!result.cancelled) {
-                        alert(result.text);
-                        var encodedText = result.text.substr(1, result.text.length);
-                        alert(result.text.charAt(0));
-                        alert(result.text.charAt(0) === "G");
-                        if(result.text.charAt(0) === "G") {
-                            var finalGameRow = decodeGame(encodedText);
-                            alert(finalGameRow);
-                            writeToFile("game", finalGameRow);
+                        var encodedText = result.text.substr(8, result.text.length);
+                        var randomKey = result.text.substr(1, 7);
+                        if($.inArray(randomKey, allRandomKeys) === -1) { // if random key not in randomkeylist
+                            if(result.text.charAt(0) === "G") {
+                                var finalGameRow = decodeGame(encodedText);
+                                // alert(finalGameRow);
+                                writeToFile("game", finalGameRow);
+                            } else {
+                                var finalPitRow = decodePit(encodedText);
+                                // alert(finalPitRow);
+                                writeToFile("pit", finalPitRow);
+                            }
+                            addUsedKey(randomKey);
                         } else {
-                            var finalPitRow = decodePit(encodedText);
-                            alert(finalPitRow);
-                            writeToFile("pit", finalPitRow);
+                            alert("This QR code has already been scanned.");
                         }
                     } else {
                         alert("Scan cancelled, data not saved");
@@ -111,7 +127,7 @@ var app = {
                 defending : isChecked("psDefendingSpecialty")
             };
 
-            var encodedText = "P" + teamNumber + " " + auto.portcullis + " " + auto.chevalDeFrise + " " + auto.moat + " " + auto.ramparts + " " + auto.drawbridge + " " + auto.sallyPort + " " + auto.rockWall + " " + auto.roughTerrain + " " + auto.lowbar + " " + auto.reachDefense + " " + auto.grabBall + " " + defenses.portcullis + " " + defenses.chevalDeFrise + " " + defenses.moat + " " + defenses.ramparts + " " + defenses.drawbridge + " " + defenses.sallyPort + " " + defenses.rockWall + " " + defenses.roughTerrain + " " + defenses.lowbar + " " + shooting.high + " " + shooting.low + " " + shooting.grabBall + " " + roles.highShooting + " " + roles.lowShooting + " " + roles.breaching + " " + roles.defending;
+            var encodedText = "P" + getRandom() + "" + teamNumber + " " + auto.portcullis + " " + auto.chevalDeFrise + " " + auto.moat + " " + auto.ramparts + " " + auto.drawbridge + " " + auto.sallyPort + " " + auto.rockWall + " " + auto.roughTerrain + " " + auto.lowbar + " " + auto.reachDefense + " " + auto.grabBall + " " + defenses.portcullis + " " + defenses.chevalDeFrise + " " + defenses.moat + " " + defenses.ramparts + " " + defenses.drawbridge + " " + defenses.sallyPort + " " + defenses.rockWall + " " + defenses.roughTerrain + " " + defenses.lowbar + " " + shooting.high + " " + shooting.low + " " + shooting.grabBall + " " + roles.highShooting + " " + roles.lowShooting + " " + roles.breaching + " " + roles.defending;
 
             return encodedText;
         }
@@ -200,7 +216,7 @@ var app = {
             var challengedTower = isChecked("challengedTower");
             var scalingSuccessful = isChecked("scalingSuccessful");
 
-            var encodedText = "G" + teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + towerNotWeakened + challengedTower + scalingSuccessful;
+            var encodedText = "G" + getRandom() + teamNumber + fouled  + deadBot + cd.a + cd.b + cd.c + cd.d + ad.a + ad.b + ad.c + ad.d + ad.lowbar + ad.grabBall + aGoals.high.makes + aGoals.high.misses + aGoals.low.makes + aGoals.low.misses + bd.a.defense + bd.a.makes + bd.a.misses + bd.b.defense + bd.b.makes + bd.b.misses + bd.c.defense + bd.c.makes + bd.c.misses + bd.d.defense + bd.d.makes + bd.d.misses + bd.lowbar + goals.high.makes + goals.high.misses + goals.low.makes + goals.low.misses  + timesBallPickedUp + gameRoles.highShooting + gameRoles.lowShooting + gameRoles.breaching + gameRoles.defending + towerNotWeakened + challengedTower + scalingSuccessful;
 
             return encodedText;
         }
@@ -232,7 +248,7 @@ var app = {
     }
 };
 
-function decodePit() {
+function decodePit(encodedText) {
     var values = encodedText.split(" ");
     values[0] = parseInt(values[0], 10);
     for(var i = 1; i < values.length; i++) {
@@ -243,7 +259,7 @@ function decodePit() {
     return finalRow;
 }
 
-function toGameArray(encodedText) {
+function toGameArray(encodedText) { // Daniel's code below. No touch danger zone
     var values = [
         encodedText.substr(0,4), // Team #
         encodedText.substr(4,1), // Single Digit
@@ -336,7 +352,27 @@ function decodeGame(encodedText) {
 
     var finalRow = values.join(",");
 
+    addRow(finalRow);
+    updateStorage();
+
     return finalRow;
+}
+
+function addRow(csvRow) {
+    var htmlRow = "<tr><td>" + csvRow.split(",").join("</td><td>") + "</td></tr>";
+    $("#data tbody").append(htmlRow);
+
+    if(allGameData.length) allGameData += "|";
+    allGameData += csvRow;
+}
+
+function updateStorage() {
+    permanentStorage.setItem("csvData", allGameData);
+}
+
+function addUsedKey(key) {
+    allRandomKeys.push(key);
+    permanentStorage.setItem("randomKeys", allRandomKeys.join("|"));
 }
 
 function bindTabs() {
@@ -396,7 +432,7 @@ function addPlusMinusButtons() {
     });
 }
 
-function getRandom() { // returns a 5 digit random number
-    return Math.floor(Math.random()*89999+10000);
+function getRandom() { // returns a random 7 digit random number
+    return Math.floor(Math.random()*8999999+1000000);
 }
 app.initialize();
