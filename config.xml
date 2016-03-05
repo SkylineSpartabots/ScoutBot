@@ -2,7 +2,7 @@
 <widget id="io.github.twotau" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ScoutBot</name>
     <description>
-        Spartabots team 2976's scouting app for the 2016 FRC competition.
+        Spartabots team 2976's scouting app for the 2016 FRC competition Stronghold.
     </description>
     <author email="dev@cordova.apache.org" href="http://twotau.github.io">
         Vishal Devireddy
@@ -18,10 +18,13 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
+        <icon src="www/img/icon-na.png" />
+        <icon src="www/img/icon-36-ldpi.png" density="ldpi" />
+        <icon src="www/img/icon-48-mdpi.png" density="mdpi" />
+        <icon src="www/img/icon-72-hdpi.png" density="hdpi" />
+        <icon src="www/img/icon-96-xhdpi.png" density="xhdpi" />
+        <icon src="www/img/icon-144-xxhdpi.png" density="xxhdpi" />
+        <icon src="www/img/icon-192-xxxhdpi.png" density="xxxhdpi" />
     </platform>
     <preference name="AndroidPersistentFileLocation" value="Internal" />
 </widget>
