@@ -3,12 +3,12 @@
 Scouting app for the 2016 FRC competition "Stronghold". :eyes:
 
 ## How to use
-Get assigned a specific robot to focus on.
-Choose either the `Pit` tab or `Game` tab at the top of the screen.
-Fill in information as game goes along.
-Tap the `Make QR code` button after the game ends.
-On the master device, go to the `Decode` tab.
-Tap the `Scan QR` button to input the QR code with the master device.
+1. Get assigned a specific robot / team to focus on.
+2. Choose the `Pit` tab or `Game` tab at the top of the screen.
+3. Fill in information as game goes along.
+3. Tap the `Make QR code` button after the game ends.
+4. On the master device, go to the `Decode` tab.
+5. Tap the `Scan QR` button on the master device to input the QR code.
 
 ### Data files
 To get the `gameData.csv` and `pitData.csv` files, go to **`\Android\data\io.github.twotau`** on either the master phone or USB connected computer.
@@ -54,6 +54,9 @@ All pit scout fields are checkboxes *except* the `Team number`.
         * Defending
 
 ## Game scouting fields
+
+**Note:** `Makes` are *successful* attempts and `Misses` are *unsuccessful* attempts.
+
 * Team number
 * Fouled (T / F)
 * Dead bot (T / F)
@@ -108,9 +111,9 @@ All pit scout fields are checkboxes *except* the `Team number`.
     * Challenged Tower (T / F)
     * Scaled (T / F)
 
-`Makes` are **successful** attempts and `Misses` are **unsuccessful** attempts.
-
 ## Screenshots
+
+These do *not* include a picture of *every* field. Look above for a complete list of inputs.
 
 ### Pit scouting
 
@@ -135,3 +138,7 @@ All pit scout fields are checkboxes *except* the `Team number`.
 Prevents QR codes from being input twice into the data file.
 
 ![Sample error](https://cloud.githubusercontent.com/assets/14433542/13544370/fcc8b668-e229-11e5-85eb-5870e9dfecc0.png)
+
+Also works sideways
+
+![Sideways screenshot](https://cloud.githubusercontent.com/assets/14433542/13545000/0d5e2e9a-e234-11e5-88d6-50ba43b9bc47.png)
