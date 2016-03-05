@@ -27,13 +27,16 @@ var app = {
         var gameFile;
 
         window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
-            dir.getFile("pitData.txt", {create:true}, function(file) {
+            dir.getFile("pitData.csv", {create:true}, function(file) {
                 pitFile = file;
             });
         });
         window.resolveLocalFileSystemURL(cordova.file.externalApplicationStorageDirectory, function(dir) {
-            dir.getFile("gameData.txt", {create:true}, function(file) {
+            dir.getFile("gameData.csv", {create:true}, function(file) {
                 gameFile = file;
+                if(allGameData.length < 10) {
+                    writeToFile("game", "Team number,Fouled,Dead bot,Chosen Defense A,Chosen Defense B,Chosen Defense C,Chosen Defense D,Auto Defense A,Auto Defense B,Auto Defense C,Auto Defense D,Auto Lowbar,Auto Grabbed ball,Auto High goal makes,Auto High goal misses,Auto Low goal makes,Auto Low goal misses,Breached Defense A,Breached Defense A makes,Breached Defense A misses,Breached Defense B,Breached Defense B makes,Breached Defense B misses,Breached Defense C,Breached Defense C makes,Breached Defense C misses,Breached Defense D,Breached Defense D makes,Breached Defense D misses,Breached Defense Lowbar,High goal makes,High goal misses,Low goal makes,Low goal misses,Ball picked up,High shooter,Low shooter,Breacher,Defender,Tower not weakened,Challenged Tower,Scaled");
+                }
             });
         });
 
