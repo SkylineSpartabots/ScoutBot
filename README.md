@@ -18,7 +18,7 @@ Then, download it to a computer and use [Tableau](http://www.tableau.com/) to an
 ## Pit scouting fields
 All pit scout fields are checkboxes *except* the `Team number`.
 
-* Team number
+* Team number (#)
 * Autonomous abilities
     * Defenses (can cross)
         * Portcullis
@@ -57,7 +57,7 @@ All pit scout fields are checkboxes *except* the `Team number`.
 
 **Note:** `Makes` are *successful* attempts and `Misses` are *unsuccessful* attempts.
 
-* Team number
+* Team number (#)
 * Fouled (T / F)
 * Dead bot (T / F)
 * Chosen Defense (if they played against us)
@@ -66,41 +66,41 @@ All pit scout fields are checkboxes *except* the `Team number`.
   * Chosen Defense C (Drawbridge / Sally port)
   * Chosen Defense D (Rock wall / Rough terrain)
 * Autonomous mode
-    * Autonomous Defense (names)
-        * Auto Defense A (Portcullis / Cheval de Frise)
-        * Auto Defense B (Moat / Ramparts)
-        * Auto Defense C (Drawbridge / Sally port)
-        * Auto Defense D (Rock wall / Rough terrain)
+    * Autonomous defenses
+        * Auto Defense A (Make / Reach / Miss)
+        * Auto Defense B (Make / Reach / Miss)
+        * Auto Defense C (Make / Reach / Miss)
+        * Auto Defense D (Make / Reach / Miss)
         * Auto Lowbar (T / F)
     * Auto Grabbed ball (T / F)
-    * Auto High goal makes
-    * Auto High goal misses
-    * Auto Low goal makes
-    * Auto Low goal misses
-* Breached Defenses (teleop)
+    * Auto High goal makes (#)
+    * Auto High goal misses (#)
+    * Auto Low goal makes (#)
+    * Auto Low goal misses (#)
+* Teleop defenses
     * Breached Defense A
         * Breached Defense A name (Portcullis / Cheval de Frise)
-        * Breached Defense A makes
-        * Breached Defense A misses
+        * Breached Defense A makes (#)
+        * Breached Defense A misses (#)
     * Breached Defense B
         * Breached Defense B name (Moat / Ramparts)
-        * Breached Defense B makes
-        * Breached Defense B misses
+        * Breached Defense B makes (#)
+        * Breached Defense B misses (#)
     * Breached Defense C
         * Breached Defense C name (Drawbridge / Sally port)
-        * Breached Defense C makes
-        * Breached Defense C misses
+        * Breached Defense C makes (#)
+        * Breached Defense C misses (#)
     * Breached Defense D
         * Breached Defense D name (Rock wall / Rough terrain)
-        * Breached Defense D makes
-        * Breached Defense D misses
+        * Breached Defense D makes (#)
+        * Breached Defense D misses (#)
     * Breached Defense Lowbar (T / F)
 * Teleop shooting
-    * High goal makes
-    * High goal misses
-    * Low goal makes
-    * Low goal misses
-    * Times ball picked up
+    * High goal makes (#)
+    * High goal misses (#)
+    * Low goal makes (#)
+    * Low goal misses (#)
+    * Times ball picked up (#)
 * Roles
     * High shooter (T / F)
     * Low shooter (T / F)
