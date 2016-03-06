@@ -320,7 +320,7 @@ function decodeGame(encodedText) {
     var values = toGameArray(encodedText);
     for(var i = 0; i < values.length; i++) {
         values[i] = parseInt(values[i], 10);
-        if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40]) !== -1) {
+        if($.inArray(i, [1, 2, 11, 12, 29, 35, 36, 37, 38, 39, 40, 41]) !== -1) {
             values[i] = (values[i]) ? "TRUE" : "FALSE";
         } else if ($.inArray(i, [3, 17]) !== -1) {
             if(values[i] === 9) {
