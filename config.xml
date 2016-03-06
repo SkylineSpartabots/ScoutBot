@@ -19,12 +19,12 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <icon src="www/img/icon-na.png" />
-        <icon src="www/img/icon-36-ldpi.png" density="ldpi" />
-        <icon src="www/img/icon-48-mdpi.png" density="mdpi" />
-        <icon src="www/img/icon-72-hdpi.png" density="hdpi" />
-        <icon src="www/img/icon-96-xhdpi.png" density="xhdpi" />
-        <icon src="www/img/icon-144-xxhdpi.png" density="xxhdpi" />
-        <icon src="www/img/icon-192-xxxhdpi.png" density="xxxhdpi" />
+        <icon src="www/img/res/icon-36-ldpi.png" density="ldpi" />
+        <icon src="www/img/res/icon-48-mdpi.png" density="mdpi" />
+        <icon src="www/img/res/icon-72-hdpi.png" density="hdpi" />
+        <icon src="www/img/res/icon-96-xhdpi.png" density="xhdpi" />
+        <icon src="www/img/res/icon-144-xxhdpi.png" density="xxhdpi" />
+        <icon src="www/img/res/icon-192-xxxhdpi.png" density="xxxhdpi" />
     </platform>
     <preference name="AndroidPersistentFileLocation" value="Internal" />
 </widget>
