@@ -264,8 +264,8 @@ function decodePit(encodedText) {
 
 function toGameArray(encodedText) { // Daniel's code below. No touch danger zone
     var values = [
-        encodedText.substr(0,4), // Team #
-        encodedText.substr(4,1), // Single Digit
+        encodedText.substr(0,4), // Team number
+        encodedText.substr(4,1), // Single digit
         encodedText.substr(5,1),
         encodedText.substr(6,1),
         encodedText.substr(7,1),
@@ -278,7 +278,7 @@ function toGameArray(encodedText) { // Daniel's code below. No touch danger zone
         encodedText.substr(14,1),
         encodedText.substr(15,1),
 
-        encodedText.substr(16,2), // Goal Counts
+        encodedText.substr(16,2), // Goal counts
         encodedText.substr(18,2),
         encodedText.substr(20,2),
         encodedText.substr(22,2),
