@@ -65,7 +65,8 @@ var app = {
                         if($.inArray(randomKey, allRandomKeys) === -1) { // if random key not in randomkeylist
                             if(result.text.charAt(0) === "G") {
                                 var finalGameRow = decodeGame(encodedText);
-                                // alert(finalGameRow);
+                                var teamNumber = +finalGameRow.substr(0, 4);
+                                alert("Scanned team " + teamNumber + " successfully: " + finalGameRow);
                                 writeToFile("game", finalGameRow);
                             } else {
                                 var finalPitRow = decodePit(encodedText);
