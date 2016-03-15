@@ -92,19 +92,6 @@ var app = {
             while(teamNumber.length < 4) {
                 teamNumber = "0" + teamNumber;
             }
-            var auto = {
-                portcullis: isChecked("psAPortcullis"),
-                chevalDeFrise: isChecked("psAChevalDeFrise"),
-                moat: isChecked("psAMoat"),
-                ramparts: isChecked("psARamparts"),
-                drawbridge: isChecked("psADrawbridge"),
-                sallyPort: isChecked("psASallyPort"),
-                rockWall: isChecked("psARockWall"),
-                roughTerrain: isChecked("psARoughTerrain"),
-                lowbar: isChecked("psALowbar"),
-                reachDefense: isChecked("psAReachDefense"),
-                grabBall: isChecked("psAGrabBall")
-            };
 
             var defenses = {
                 portcullis: isChecked("psPortcullis"),
@@ -131,7 +118,7 @@ var app = {
                 defending : isChecked("psDefendingSpecialty")
             };
 
-            var encodedText = "P" + getRandom() + "" + teamNumber + " " + auto.portcullis + " " + auto.chevalDeFrise + " " + auto.moat + " " + auto.ramparts + " " + auto.drawbridge + " " + auto.sallyPort + " " + auto.rockWall + " " + auto.roughTerrain + " " + auto.lowbar + " " + auto.reachDefense + " " + auto.grabBall + " " + defenses.portcullis + " " + defenses.chevalDeFrise + " " + defenses.moat + " " + defenses.ramparts + " " + defenses.drawbridge + " " + defenses.sallyPort + " " + defenses.rockWall + " " + defenses.roughTerrain + " " + defenses.lowbar + " " + shooting.high + " " + shooting.low + " " + shooting.grabBall + " " + roles.highShooting + " " + roles.lowShooting + " " + roles.breaching + " " + roles.defending;
+            var encodedText = "P" + getRandom() + "" + teamNumber + " " + defenses.portcullis + " " + defenses.chevalDeFrise + " " + defenses.moat + " " + defenses.ramparts + " " + defenses.drawbridge + " " + defenses.sallyPort + " " + defenses.rockWall + " " + defenses.roughTerrain + " " + defenses.lowbar + " " + shooting.high + " " + shooting.low + " " + shooting.grabBall + " " + roles.highShooting + " " + roles.lowShooting + " " + roles.breaching + " " + roles.defending;
 
             return encodedText;
         }
@@ -390,8 +377,50 @@ function customizeMaterial() {
 }
 
 function addRestrictions() {
+    var teams = [];
+    teams[492] = "Titan Robotics Club";
+    teams[568] = "Nerds of the North";
+    teams[948] = "Newport Robotics Group (NRG)";
+    teams[1294] = "Top Gun";
+    teams[1778] = "Chill Out";
+    teams[2605] = "Sehome Seamonsters";
+    teams[2660] = "Pengbots";
+    teams[2903] = "NeoBots";
+    teams[2907] = "Lion Robotics";
+    teams[2928] = "Viking Robotics";
+    teams[2976] = "Spartabots!!!";
+    teams[2980] = "The Whidbey Island Wild Cats";
+    teams[3070] = "Team Pronto";
+    teams[3238] = "Cyborg Ferrets";
+    teams[3268] = "Vahallabots";
+    teams[3574] = "HIGH TEKERZ";
+    teams[3663] = "CPR";
+    teams[3681] = "Robo-Raiders";
+    teams[3826] = "Sequim Robotics Federation (SRF)";
+    teams[4030] = "NullPointerException";
+    teams[4060] = "S.W.A.G.";
+    teams[4077] = "M*A*S*H";
+    teams[4089] = "Stealth Robotics";
+    teams[4173] = "Bulldogs";
+    teams[4180] = "Iron Riders";
+    teams[4205] = "ROBOCUBS";
+    teams[4512] = "BEARbots";
+    teams[4654] = "Mountaineers";
+    teams[4682] = "BraveBots";
+    teams[4683] = "Full-metal Robotics";
+    teams[4911] = "CyberKnights";
+    teams[4915] = "Spartronics";
+    teams[4918] = "The Roboctopi";
+    teams[5495] = "Aluminati";
+    teams[5748] = "Adna Pirates";
+
     $("#pitTeamNumber, #gameTeamNumber").change(function() {
-        $(this).val($(this).val().substr(0, 4));
+        var teamNumber = $(this).val().substr(0, 4); // keep only first 4 digits
+        $(this).val(teamNumber);
+
+        var teamName = teams[teamNumber];
+        if(!teamName) teamName = "???";
+        $(this).siblings("span").html("Team " + teamNumber + ": <strong>" + teamName + "</strong>");
     });
 
     $("#playedAgainstUs ~ fieldset input").prop("disabled", true);

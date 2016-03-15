@@ -40,53 +40,13 @@
                     <legend>Team basic info</legend>
                     <label for="pitTeamNumber">Team number:</label>
                     <input type="number" name="teamNumber" min="1" max="6300" placeholder="e.g. 2976" id="pitTeamNumber"/>
+                    <span></span>
                     <!-- <br />
                     <input type="radio" name="alliance" value="Blue" id="pitBlueAlliance">
                     <label for="pitBlueAlliance">Blue</label>
                     <input type="radio" name="alliance" value="Red" id="pitRedAlliance">
                     <label for="pitRedAlliance">Red</label> -->
                 </fieldset>
-                <fieldset>
-                    <legend>Autonomous abilities</legend>
-                    <fieldset class="defenses">
-                        <legend>Defenses can cross (auto)</legend>
-                        <fieldset>
-                            <legend>A</legend>
-                            <input type="checkbox" name="psAPortcullis" value="true" id="psAPortcullis">
-                            <label for="psAPortcullis">Portcullis</label>
-                            <input type="checkbox" name="psAChevalDeFrise" value="true" id="psAChevalDeFrise">
-                            <label for="psAChevalDeFrise">Cheval de Frise</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>B</legend>
-                            <input type="checkbox" name="psAMoat" value="true" id="psAMoat">
-                            <label for="psAMoat">Moat</label>
-                            <input type="checkbox" name="psARamparts" value="true" id="psARamparts">
-                            <label for="psARamparts">Ramparts</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>C</legend>
-                            <input type="checkbox" name="psADrawbridge" value="true" id="psADrawbridge">
-                            <label for="psADrawbridge">Drawbridge</label>
-                            <input type="checkbox" name="psASallyPort" value="true" id="psASallyPort">
-                            <label for="psASallyPort">Sally Port</label>
-                        </fieldset>
-                        <fieldset>
-                            <legend>D</legend>
-                            <input type="checkbox" name="psARockWall" value="true" id="psARockWall">
-                            <label for="psARockWall">Rock Wall</label>
-                            <input type="checkbox" name="psARoughTerrain" value="true" id="psARoughTerrain">
-                            <label for="psARoughTerrain">Rough Terrain</label>
-                        </fieldset>
-                        <input type="checkbox" name="psALowbar" value="true" id="psALowbar">
-                        <label for="psALowbar" class="noPicture">Low Bar</label>
-                        <br />
-                        <input type="checkbox" name="psAReachDefense" value="true" id="psAReachDefense">
-                        <label for="psAReachDefense" class="noPicture">Can reach defenses</label>
-                    </fieldset>
-                    <input type="checkbox" name="psAGrabBall" value="true" id="psAGrabBall">
-                    <label for="psAGrabBall">Can grab ball (auto)</label>
-                </fieldset> <!-- end auto abilities -->
                 <fieldset class="defenses">
                     <legend>Defenses can cross</legend>
                     <fieldset>
@@ -152,6 +112,7 @@
                     <label for="gameTeamNumber">Team number:</label>
                     <input type="number" name="teamNumber" id="gameTeamNumber" min="1" max="6300" placeholder="e.g. 2976" />
                     <br />
+                    <span></span>
                     <!-- <input type="radio" name="alliance" value="Blue" id="gameBlueAlliance">
                     <label for="gameBlueAlliance">Blue</label>
                     <input type="radio" name="alliance" value="Red" id="gameRedAlliance">
