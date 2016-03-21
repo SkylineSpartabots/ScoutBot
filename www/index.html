@@ -34,7 +34,7 @@
             </div>
             <h1 class="pit">Pit Scouting</h1>
             <h1 class="game">Game Scouting</h1>
-            <h1 class="decode">Decode QR Code</h1>
+            <h1 class="decode">Decode QR Code <span id="versionNumber">v 1.0.3</span></h1>
             <div class="pit view">
                 <fieldset>
                     <legend>Team basic info</legend>
@@ -105,6 +105,31 @@
                     <input type="checkbox" name="psRole" value="defending" id="psDefendingSpecialty">
                     <label for="psDefendingSpecialty">Defending</label>
                 </fieldset>
+                <fieldset>
+                    <legend>Robot features</legend>
+                    <fieldset>
+                        <legend>Wheel type</legend>
+                        <input type="radio" name="wheelType" value="Traction" id="wheelTypeTraction">
+                        <label for="wheelTypeTraction">Traction Wheels</label>
+                        <input type="radio" name="wheelType" value="Omni" id="wheelTypeOmni">
+                        <label for="wheelTypeOmni">Omni Wheels</label>
+                        <input type="radio" name="wheelType" value="Mecanum" id="wheelTypeMecanum">
+                        <label for="wheelTypeMecanum">Mecanum Wheels</label>
+                        <input type="radio" name="wheelType" value="Pneumatic" id="wheelTypePneumatic">
+                        <label for="wheelTypePneumatic">Pneumatic Wheels</label>
+                        <input type="radio" name="wheelType" value="Other" id="wheelTypOther">
+                        <label for="wheelTypOther">Other</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Pickup mechanism</legend>
+                        <input type="radio" name="pickupType" value="Wide" id="pickupTypeWide">
+                        <label for="pickupTypeWide">Wide</label>
+                        <input type="radio" name="pickupType" value="Small" id="pickupTypeSmall">
+                        <label for="pickupTypeSmall">Small</label>
+                        <input type="radio" name="pickupType" value="Other" id="pickupTypeOther">
+                        <label for="pickupTypeOther">Other</label>
+                    </fieldset>
+                </fieldset>
             </div>
             <div class="game view">
                 <fieldset>
@@ -119,43 +144,8 @@
                     <label for="gameRedAlliance">Red</label> -->
                 </fieldset>
                 <fieldset>
-                    <legend>Bad stuff</legend>
-                    <input type="checkbox" name="foul" value="foul" id="fouled"><label for="fouled">Foul or Yellow/Red card</label>
-                    <br />
+                    <legend>Problems with robot</legend>
                     <input type="checkbox" name="deadbot" value="dead" id="deadBot"><label for="deadBot">Dead bot</label>
-                </fieldset>
-                <fieldset class="defenses">
-                    <legend>Defenses chosen against us (if applicable)</legend>
-                    <input type="checkbox" name="playedAgainstUs" value="true" id="playedAgainstUs">
-                    <label for="playedAgainstUs" class="noPicture">Played against us</label>
-                    <fieldset>
-                        <legend>A</legend>
-                        <input type="radio" name="cdCatA" value="0" id="cdPortcullis">
-                        <label for="cdPortcullis">Portcullis</label>
-                        <input type="radio" name="cdCatA" value="1" id="cdChevalDeFrise">
-                        <label for="cdChevalDeFrise">Cheval de Frise</label>
-                    </fieldset>
-                    <fieldset>
-                        <legend>B</legend>
-                        <input type="radio" name="cdCatB" value="0" id="cdMoat">
-                        <label for="cdMoat">Moat</label>
-                        <input type="radio" name="cdCatB" value="1" id="cdRamparts">
-                        <label for="cdRamparts">Ramparts</label>
-                    </fieldset>
-                    <fieldset>
-                        <legend>C</legend>
-                        <input type="radio" name="cdCatC" value="0" id="cdDrawbridge">
-                        <label for="cdDrawbridge">Drawbridge</label>
-                        <input type="radio" name="cdCatC" value="1" id="cdSallyPort">
-                        <label for="cdSallyPort">Sally Port</label>
-                    </fieldset>
-                    <fieldset>
-                        <legend>D</legend>
-                        <input type="radio" name="cdCatD" value="0" id="cdRockWall">
-                        <label for="cdRockWall">Rock Wall</label>
-                        <input type="radio" name="cdCatD" value="1" id="cdRoughTerrain">
-                        <label for="cdRoughTerrain">Rough Terrain</label>
-                    </fieldset>
                 </fieldset>
                 <fieldset id="autonomous">
                     <legend>Autonomous</legend>
@@ -308,8 +298,9 @@
                 </fieldset>
             </div>
             <button class="btn waves-effect game generateQR">Make QR</button>
-            <button class="btn waves-effect pit generateQR">Make QR</button>
+            <button class="btn waves-effect pit generateQR">Save Data</button>
             <button class="btn waves-effect" id="decodeQR">Scan QR</button>
+            <button class="btn orange waves-effect clear">Clear</button>
             <div id="qrResult"></div>
             <table id="data">
                 <thead>

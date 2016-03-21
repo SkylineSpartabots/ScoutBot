@@ -6,9 +6,9 @@
 }
 
 body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
     user-select: none;
     background-color: #fff;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -16,6 +16,11 @@ body {
     line-height: 1.3em;
     height: 100%;
     width: 100%;
+}
+
+#autonomous {
+    /*background: url("img/tiny_grid.png");*/
+    background: #fdff93;
 }
 
 input {
@@ -27,6 +32,19 @@ h1 {
 }
 h2 {
     font-size: 1.3em;
+}
+
+#versionNumber {
+    font-size: 0.8em;
+}
+
+.defenses.breached input[type=radio] + label {
+    margin-bottom: 4px;
+    font-size: 0.9em;
+}
+
+button.btn {
+    margin: 8px 0;
 }
 
 #tabsContainer {
@@ -70,7 +88,8 @@ h2 {
 .decodeTabActive h1:not(.decode),
 .decodeTabActive .generateQR,
 .decodeTabActive #takePicture,
-.decodeTabActive #qrResult {
+.decodeTabActive #qrResult,
+.decodeTabActive button.clear {
     display: none;
 }
 

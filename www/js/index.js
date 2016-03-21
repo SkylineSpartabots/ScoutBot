@@ -51,9 +51,15 @@ var app = {
         }
 
         $(".generateQR").click(function() {
-            $("#qrResult").empty();
-            var data = $(this).hasClass("game") ? getGameData() : getPitData(); // set it to either game or pit data
-            $("#qrResult").append("<img src='" + qr.toDataURL(data) + "' />");
+            if($(this).hasClass("game")) { // game
+                $("#qrResult").empty();
+                var data = getGameData();
+                $("#qrResult").append("<img src='" + qr.toDataURL(data) + "' />");
+            } else { // pit
+                var pitData = getPitData();
+                writeToFile("pit", pitData);
+                alert("Successful " + pitData);
+            }
         });
 
         $("#decodeQR").click(function() {
@@ -62,16 +68,16 @@ var app = {
                     if(!result.cancelled) {
                         var encodedText = result.text.substr(8, result.text.length);
                         var randomKey = result.text.substr(1, 7);
-                        if($.inArray(randomKey, allRandomKeys) === -1) { // if random key not in randomkeylist
+                        if($.inArray(randomKey, allRandomKeys) === -1) { // if random key not in allRandomKeys array
                             if(result.text.charAt(0) === "G") {
                                 var finalGameRow = decodeGame(encodedText);
                                 var teamNumber = +finalGameRow.substr(0, 4);
                                 alert("Scanned team " + teamNumber + " successfully: " + finalGameRow);
                                 writeToFile("game", finalGameRow);
                             } else {
-                                var finalPitRow = decodePit(encodedText);
-                                // alert(finalPitRow);
-                                writeToFile("pit", finalPitRow);
+                                // var finalPitRow = decodePit(encodedText);
+                                alert("Oh no something went wrong, tell Vishal he messed up");
+                                // writeToFile("pit", finalPitRow);
                             }
                             addUsedKey(randomKey);
                         } else {
@@ -118,9 +124,17 @@ var app = {
                 defending : isChecked("psDefendingSpecialty")
             };
 
-            var encodedText = "P" + getRandom() + "" + teamNumber + " " + defenses.portcullis + " " + defenses.chevalDeFrise + " " + defenses.moat + " " + defenses.ramparts + " " + defenses.drawbridge + " " + defenses.sallyPort + " " + defenses.rockWall + " " + defenses.roughTerrain + " " + defenses.lowbar + " " + shooting.high + " " + shooting.low + " " + shooting.grabBall + " " + roles.highShooting + " " + roles.lowShooting + " " + roles.breaching + " " + roles.defending;
+            var wheelType = getRadio("wheelType");
+            var pickupType = getRadio("pickupType");
 
-            return encodedText;
+            var encodedText = [teamNumber, defenses.portcullis, defenses.chevalDeFrise, defenses.moat, defenses.ramparts, defenses.drawbridge, defenses.sallyPort, defenses.rockWall, defenses.roughTerrain, defenses.lowbar, shooting.high, shooting.low, shooting.grabBall, roles.highShooting, roles.lowShooting, roles.breaching, roles.defending, wheelType, pickupType];
+
+            encodedText[0] = parseInt(encodedText[0], 10);
+            for(var i = 1; i < encodedText.length - 2; i++) {
+                encodedText[i] = (encodedText[i] === "1") ? "TRUE" : "FALSE";
+            }
+
+            return encodedText.join(",");
         }
 
         function getGameData() {
@@ -239,16 +253,36 @@ var app = {
     }
 };
 
-function decodePit(encodedText) {
-    var values = encodedText.split(" ");
-    values[0] = parseInt(values[0], 10);
-    for(var i = 1; i < values.length; i++) {
-        values[i] = (values[i] === "1") ? "TRUE" : "FALSE";
-    }
-
-    var finalRow = values.join(",");
-    return finalRow;
-}
+// function decodePit(encodedText) {
+//     var values = encodedText.split(" ");
+//     values[0] = parseInt(values[0], 10);
+//     for(var i = 1; i < values.length - 2; i++) {
+//         values[i] = (values[i] === "1") ? "TRUE" : "FALSE";
+//     }
+//
+//     var wheelType = values[values.length-1];
+//     if(wheelType === "TractionWheels") {
+//         values[values.length-1] = "Traction Wheels";
+//     } else if(wheelType === "OmniWheels") {
+//         values[values.length-1] = "Omni Wheels";
+//     } else if(wheelType === "MecanumWheels") {
+//         values[values.length-1] = "Mecanum Wheels";
+//     } else {
+//         values[values.length-1] = "Other Wheels";
+//     }
+//
+//     var pickupType = values[values.length-2];
+//     if(pickupType === "WidePickup") {
+//         values[values.length-2] = "Wide Pickup";
+//     } else if(pickupType === "SmallPickup") {
+//         values[values.length-2] = "Small Pickup";
+//     } else {
+//         values[values.length-2] = "Other Pickup";
+//     }
+//
+//     var finalRow = values.join(",");
+//     return finalRow;
+// }
 
 function toGameArray(encodedText) { // Daniel's code below. No touch danger zone
     var values = [
@@ -413,6 +447,15 @@ function addRestrictions() {
     teams[4918] = "The Roboctopi";
     teams[5495] = "Aluminati";
     teams[5748] = "Adna Pirates";
+
+    $("button.clear").click(function() {
+        $("input").attr("checked", false);
+        $(".makes, .misses, .counter").html("0");
+        $("#gameTeamNumber").val("");
+        $("#autonomous input[type=radio][value=2]").prop("checked", "checked");
+        $("#qrResult").html("");
+        alert("Cleared");
+    });
 
     $("#pitTeamNumber, #gameTeamNumber").change(function() {
         var teamNumber = $(this).val().substr(0, 4); // keep only first 4 digits
