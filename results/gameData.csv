@@ -1,0 +1,179 @@
+Team number,Dead bot,Auto Defense A,Auto Defense B,Auto Defense C,Auto Defense D,Auto Lowbar,Auto Grabbed ball,Auto High goal makes,Auto High goal misses,Auto Low goal makes,Auto Low goal misses,Breached Defense A,Breached Defense A makes,Breached Defense A misses,Breached Defense B,Breached Defense B makes,Breached Defense B misses,Breached Defense C,Breached Defense C makes,Breached Defense C misses,Breached Defense D,Breached Defense D makes,Breached Defense D misses,Breached Defense Lowbar,High goal makes,High goal misses,Low goal makes,Low goal misses,Ball picked up,High shooter,Low shooter,Breacher,Defender,Tower not weakened,Challenged Tower,Scaled
+4918,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,3,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,1,0,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4911,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,1,0,Sally Port,2,0,Rock Wall,2,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+5495,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,2,1,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4512,FALSE,Miss,Reach,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,4,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3681,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Drawbridge,0,0,Rough Terrain,4,0,TRUE,3,1,0,0,5,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4089,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,1,0,Sally Port,0,0,Rough Terrain,1,0,FALSE,0,0,0,1,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2605,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,2,0,Rock Wall,0,0,FALSE,0,1,0,0,2,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+4180,FALSE,Miss,Miss,Miss,Miss,TRUE,TRUE,1,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,0,Rough Terrain,0,0,TRUE,0,1,0,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+5748,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE
+1294,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,1,Moat,1,0,Sally Port,2,0,Rock Wall,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4060,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,0,0,1,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+4654,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Drawbridge,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+3070,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2903,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,3,0,Sally Port,0,0,Rock Wall,1,0,TRUE,0,0,2,0,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3238,FALSE,Make,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,1,2,0,0,3,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+492,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,1,2,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,3,1,4,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+4173,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,2,Sally Port,0,0,Rock Wall,1,0,FALSE,0,0,0,0,1,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+2976,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,2,0,Sally Port,0,0,Rough Terrain,2,0,FALSE,0,0,3,0,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4683,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rough Terrain,1,0,TRUE,0,0,0,0,1,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+4205,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,1,Moat,1,0,Sally Port,2,0,Rock Wall,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+2907,FALSE,Miss,Miss,Miss,Make,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,1,Sally Port,0,0,Rock Wall,2,0,FALSE,1,0,0,0,1,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+3663,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,1,0,1,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4915,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3826,FALSE,Miss,Make,Miss,Miss,FALSE,TRUE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,1,0,Rock Wall,3,0,FALSE,1,0,3,0,0,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+4077,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,2,0,Sally Port,0,0,Rock Wall,3,0,FALSE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2660,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+948,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,1,0,3,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE
+3574,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,1,0,Sally Port,0,0,Rock Wall,1,0,TRUE,0,0,0,0,2,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+3268,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,1,1,Sally Port,0,0,Rock Wall,0,0,FALSE,1,1,0,0,2,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4654,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,2,0,Sally Port,1,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+5495,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,1,0,0,Cheval de Frise,2,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4089,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Moat,0,0,Drawbridge,1,0,Rough Terrain,0,0,FALSE,0,1,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4683,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,4,1,Drawbridge,2,0,Rough Terrain,1,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+948,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Drawbridge,0,0,Rough Terrain,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+3681,FALSE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,2,0,TRUE,1,3,0,0,4,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+2976,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Moat,1,1,Drawbridge,0,0,Rock Wall,0,3,FALSE,0,0,2,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+568,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Drawbridge,2,0,Rock Wall,0,0,FALSE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4180,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,1,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,3,2,0,0,5,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4512,FALSE,Miss,Reach,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,1,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+4682,TRUE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,2,0,Drawbridge,0,0,Rock Wall,0,0,TRUE,0,0,2,0,3,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4077,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,3,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3070,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,0,1,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3826,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,2,0,Sally Port,0,0,Rock Wall,3,0,TRUE,0,1,2,1,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+5748,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Drawbridge,0,0,Rock Wall,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+4911,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Moat,2,0,Sally Port,3,0,Rock Wall,3,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3238,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,1,0,0,0,Cheval de Frise,2,0,Moat,1,0,Sally Port,0,0,Rock Wall,0,0,FALSE,4,0,0,0,4,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2907,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,5,0,Sally Port,2,0,Rock Wall,2,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+3574,FALSE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,TRUE,0,1,0,0,0,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+1294,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,2,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,2,2,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2928,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rough Terrain,2,0,TRUE,0,0,1,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4173,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,2,1,Rough Terrain,0,0,FALSE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4030,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+4915,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,0,1,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4915,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,0,2,2,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3663,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,3,0,FALSE,4,1,1,0,6,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+1778,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,2,0,Sally Port,0,0,Rough Terrain,1,0,FALSE,0,0,0,0,1,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+4089,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Sally Port,1,0,Rough Terrain,2,0,TRUE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4205,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,2,0,Rough Terrain,0,0,TRUE,0,0,2,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2980,FALSE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Portcullis,1,0,Moat,0,0,Sally Port,1,1,Rough Terrain,0,4,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2903,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,1,0,Moat,1,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,0,1,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4077,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rough Terrain,1,0,TRUE,0,0,1,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2928,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,1,0,Sally Port,0,0,Rock Wall,1,1,TRUE,0,0,2,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4654,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+4683,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,1,0,Rock Wall,1,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4682,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,6,0,Sally Port,2,3,Rough Terrain,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3238,FALSE,Make,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,TRUE,5,0,0,0,5,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+3681,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,TRUE,4,0,0,0,3,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+3268,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,1,Rock Wall,0,0,TRUE,1,0,0,0,1,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4173,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,2,1,Rock Wall,1,0,FALSE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2980,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Ramparts,1,4,Sally Port,0,2,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3070,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE
+1294,FALSE,Miss,Reach,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,5,0,5,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3663,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,TRUE,6,0,0,0,5,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+4512,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,2,0,Rock Wall,1,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4180,FALSE,Miss,Miss,Miss,Miss,TRUE,TRUE,0,1,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,4,0,0,4,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+1778,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,2,0,FALSE,0,0,1,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+948,TRUE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,0,3,0,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4089,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,1,1,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,0,1,0,3,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4173,FALSE,Miss,Make,Miss,Miss,FALSE,TRUE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,2,0,Rough Terrain,0,0,TRUE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+568,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,0,0,Rough Terrain,1,0,FALSE,0,0,1,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3681,FALSE,Miss,Reach,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,3,3,0,0,6,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+2928,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Sally Port,0,0,Rough Terrain,3,0,FALSE,0,0,1,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+1778,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4911,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Sally Port,1,0,Rough Terrain,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4683,FALSE,Miss,Miss,Make,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,3,0,Sally Port,0,0,Rough Terrain,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+5495,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,2,0,0,2,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+3070,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,1,1,0,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2605,FALSE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,0,Rock Wall,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+4918,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,2,0,0,0,3,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+2660,FALSE,Miss,Miss,Reach,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,0,Rock Wall,0,0,FALSE,0,1,0,0,1,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+3663,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,2,0,Sally Port,0,0,Rock Wall,2,0,TRUE,2,1,1,0,3,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+492,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,3,0,3,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+4180,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,0,Rock Wall,0,0,FALSE,2,1,0,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3826,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Drawbridge,0,0,Rock Wall,1,0,TRUE,0,0,3,1,3,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3574,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,1,0,Rock Wall,1,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+4654,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,1,Sally Port,0,0,Rock Wall,2,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+5495,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,1,3,0,0,4,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4205,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,1,0,Rock Wall,0,0,FALSE,0,0,3,0,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+948,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,2,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3238,FALSE,Make,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,2,1,1,0,1,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3826,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,0,0,Rock Wall,3,0,FALSE,0,0,5,0,4,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3663,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,2,1,3,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+4089,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,TRUE,0,0,2,0,2,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+4512,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,2,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+3681,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,3,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+2907,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,2,0,Sally Port,0,0,Rock Wall,0,0,FALSE,1,0,1,0,1,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4682,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Drawbridge,2,0,Rough Terrain,1,0,FALSE,0,0,1,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4512,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+4915,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,0,0,Drawbridge,0,0,Rough Terrain,2,0,TRUE,0,0,2,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2903,FALSE,Miss,Reach,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Drawbridge,2,0,Rough Terrain,0,0,FALSE,0,0,2,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3268,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,2,0,0,0,0,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4915,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Drawbridge,0,0,Rough Terrain,0,0,TRUE,0,0,1,0,0,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+4683,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,3,1,Ramparts,0,0,Drawbridge,0,0,Rock Wall,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4205,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Drawbridge,0,0,Rock Wall,0,0,TRUE,0,1,1,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3574,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,1,0,TRUE,0,1,0,0,1,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4060,FALSE,Reach,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+2605,FALSE,Miss,Reach,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,1,3,0,0,1,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+492,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Drawbridge,0,0,Rock Wall,0,1,TRUE,0,0,3,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4915,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Drawbridge,0,0,Rock Wall,0,0,FALSE,0,0,0,1,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+5748,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+1778,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,1,0,Sally Port,1,0,Rough Terrain,0,0,FALSE,0,0,0,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4654,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,1,0,Drawbridge,0,0,Rock Wall,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+2903,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,0,Rough Terrain,1,0,FALSE,0,1,0,0,0,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+2980,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+4682,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,1,0,Rock Wall,1,0,FALSE,0,0,1,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+3070,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4911,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Ramparts,3,0,Drawbridge,1,0,Rough Terrain,0,0,FALSE,0,0,0,0,2,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+4911,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Ramparts,1,0,Drawbridge,1,0,Rough Terrain,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4030,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,2,0,Sally Port,2,0,Rock Wall,0,0,FALSE,1,0,0,1,1,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2660,TRUE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,0,0,Drawbridge,0,0,Rough Terrain,3,0,FALSE,0,0,0,1,2,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+2928,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,0,0,Drawbridge,0,0,Rough Terrain,0,0,TRUE,0,0,2,1,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4089,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,1,1,Sally Port,0,0,Rock Wall,1,1,FALSE,0,0,3,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+5495,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,2,1,0,0,3,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+568,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,1,0,Rock Wall,0,0,TRUE,0,0,1,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4915,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,0,0,0,2,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+1294,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,0,0,2,2,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2605,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,0,0,Rock Wall,0,0,FALSE,1,1,0,0,1,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+4077,FALSE,Miss,Miss,Make,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,2,1,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+4654,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+4911,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,3,0,Ramparts,0,0,Sally Port,1,0,Rock Wall,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4918,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,2,0,0,1,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3826,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Portcullis,1,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,1,0,1,0,2,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+1778,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,2,0,Moat,2,0,Sally Port,1,2,Rock Wall,1,0,FALSE,0,0,0,0,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4512,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+3070,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,2,TRUE,0,0,0,0,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+492,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Drawbridge,0,0,Rock Wall,0,0,TRUE,0,0,2,1,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+948,FALSE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,3,0,Sally Port,0,0,Rock Wall,2,0,FALSE,0,0,2,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+4030,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,1,0,0,0,Cheval de Frise,2,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,2,0,TRUE,0,1,0,0,0,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3238,FALSE,Make,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,1,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,1,0,FALSE,4,0,0,0,3,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2907,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,1,0,Rough Terrain,6,0,FALSE,1,0,0,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3268,FALSE,Miss,Miss,Miss,Miss,FALSE,TRUE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,2,0,0,0,1,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+3663,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,3,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,0,6,0,6,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+2928,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Portcullis,3,0,Moat,0,0,Drawbridge,0,0,Rock Wall,0,0,TRUE,0,0,4,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4060,TRUE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+568,TRUE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,0,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,1,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+2976,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,TRUE,0,0,1,1,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4683,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,2,0,Rough Terrain,1,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2976,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Moat,0,0,Sally Port,0,0,Rock Wall,1,0,TRUE,0,0,1,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2903,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rough Terrain,1,0,FALSE,0,0,3,1,1,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+3574,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+5748,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+3681,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,0,Sally Port,0,0,Rock Wall,0,0,TRUE,1,1,0,0,1,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+2980,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,1,0,TRUE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+4682,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,2,0,Sally Port,0,0,Rough Terrain,2,0,FALSE,0,0,5,2,6,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+5748,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Moat,0,0,Sally Port,0,0,Rock Wall,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+4173,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,1,1,Sally Port,2,0,Rock Wall,2,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+1294,FALSE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,1,0,Rough Terrain,1,0,FALSE,0,0,2,0,2,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+1294,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rock Wall,2,0,FALSE,0,0,1,0,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4030,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Drawbridge,0,0,Rough Terrain,2,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+1294,FALSE,Miss,Miss,Miss,Make,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,2,1,FALSE,0,0,1,0,0,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+2903,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,1,0,TRUE,0,0,2,0,2,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+4180,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,TRUE,2,2,0,0,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4060,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,0,0,1,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+4682,FALSE,Miss,Miss,Miss,Miss,TRUE,FALSE,0,0,0,0,Cheval de Frise,0,0,Ramparts,0,0,Sally Port,0,0,Rough Terrain,2,0,FALSE,0,0,1,2,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+5495,FALSE,Miss,Miss,Miss,Reach,FALSE,FALSE,0,0,0,0,Cheval de Frise,2,0,Moat,0,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,1,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+4654,TRUE,Miss,Miss,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,0,0,Moat,0,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+4173,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Portcullis,0,0,Moat,1,0,Sally Port,1,0,Rough Terrain,0,0,FALSE,0,0,0,0,0,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+3826,FALSE,Miss,Make,Miss,Miss,FALSE,FALSE,0,0,0,0,Cheval de Frise,1,1,Moat,1,0,Sally Port,0,0,Rough Terrain,0,0,FALSE,0,0,0,0,1,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
